@@ -1,0 +1,537 @@
+%\documentclass[12pt,preprint]{aastex}  %% For preprint style with 12pt type
+\documentclass[iop]{emulateapj}
+\usepackage{lscape}
+\usepackage{rotating}
+  \received{}
+  \revised{}
+  \accepted{}
+
+%\slugcomment{To Be Submitted to \apj}
+\shortauthors{Auger et al.}
+\shorttitle{Colors, Lensing and Stellar Masses of Early-type Galaxies}
+
+
+% Define commands
+\newcommand{\kms}{km\ s$^{-1}$}
+\newcommand{\mkms}{\rm{km s^{-1}}}
+\newcommand{\ang}{$\rm{\AA}$}
+\newcommand{\hinv}{h$^{-1}$}
+\newcommand{\hunit}{~km\ s$^{-1}$\ Mpc$^{-1}$}
+
+\begin{document}
+
+%\title{SLACS with Colors}
+%\title{The Sloan Lens ACS Survey. IX. The Definitive ACS/WFPC2 Sample with Colors}
+\title{The Sloan Lens ACS Survey. IX. Colors, Lensing and Stellar Masses of Early-type Galaxies}
+
+\author{M. W. Auger\altaffilmark{1,$\dagger$}, T. Treu\altaffilmark{1,2}, A. S. Bolton\altaffilmark{3}, R. Gavazzi\altaffilmark{4}, L. V. E. Koopmans\altaffilmark{5}, P. J. Marshall\altaffilmark{1}, K. Bundy\altaffilmark{6}, L. A. Moustakas\altaffilmark{7}}
+\altaffiltext{1}{Department of Physics, University of California, Santa Barbara, CA 93106, USA}
+\altaffiltext{2}{Sloan Fellow, Packard Fellow}
+\altaffiltext{3}{Beatrice Watson Parrent Fellow, Institute for Astronomy, University of Hawai'i, 2680 Woodlawn Dr., Honolulu, HI 96822}
+\altaffiltext{4}{Institut d'Astrophysique de Paris, UMR7095 CNRS \& Univ. Pierre et Marie Curie, 98bis Bvd Arago, F-75014 Paris, France}
+\altaffiltext{5}{Kapteyn Astronomical Institute, University of Groningen, P.O. Box 800, 9700AV Groningen, The Netherlands}
+\altaffiltext{6}{Hubble Fellow, Department of Astronomy, University of California, Berkeley, CA 94720}
+\altaffiltext{7}{Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, M/S 169-237, Pasadena, CA 91109}
+\altaffiltext{$\dagger$} {\texttt mauger@physics.ucsb.edu}
+
+\begin{abstract}
+We present the current photometric dataset for the Sloan Lens ACS
+(SLACS) Survey, including HST photometry from ACS, WFPC2, and
+NICMOS. These data have enabled the confirmation of an additional 15
+grade `A' (certain) lens systems, bringing the number of SLACS grade
+`A' lenses to 85; including 13 grade `B' (likely) systems, SLACS has
+identified nearly 100 lenses and lens candidates. Approximately 80\%
+of the grade `A' systems have elliptical morphologies while $\sim $10\% show
+spiral structure; the remaining lenses have lenticular morphologies.
+Spectroscopic redshifts for the lens and source are available for
+every system, making SLACS the largest homogeneous dataset of
+galaxy-scale lenses to date. We have created lens models using
+singular isothermal ellipsoid mass distributions for the 11 new
+systems that are dominated by a single mass component and where
+the multiple images are detected with sufficient signal-to-noise; these
+models give a high precision measurement of the mass within the
+Einstein radius of each lens. We have developed a novel
+Bayesian stellar population analysis code to determine robust stellar
+masses with accurate error estimates. We apply this code to deep,
+high-resolution HST imaging and determine stellar masses with typical
+statistical errors of 0.1 dex; we find that these stellar masses
+are unbiased compared to estimates obtained using SDSS photometry, provided
+ that informative priors are used. The stellar masses range from $10^{10.5}$
+to $10^{11.8}$ M$_\odot$ and the typical stellar mass fraction within
+the Einstein radius is 0.4, assuming a Chabrier IMF. The ensemble
+properties of the SLACS lens galaxies, e.g. stellar masses and projected
+ellipticities, appear to be indistinguishable from other SDSS galaxies
+with similar stellar velocity dispersions. This further supports
+ that SLACS lenses are representative of the overall population
+of massive early-type galaxies with M$_* \gtrsim 10^{11} {\rm M_\odot}$,
+and are therefore an ideal dataset to investigate the kpc-scale
+distribution of luminous and dark matter in galaxies out to $z \sim 0.5$.
+\end{abstract}
+
+\keywords{
+   galaxies: elliptical and lenticular, cD -- gravitational lensing -- surveys
+}
+
+\section{INTRODUCTION}
+Early-type galaxies have been found to be remarkably homogeneous, as
+evidenced by the tight scaling relationships of the Fundamental Plane
+\citep{fp,dressler} and the small scatter of their nearly-isothermal
+central density profiles \citep[e.g.,][]{rk,rkk,paper3,koopmans09}. However,
+there are many details of this homogeneity that remain unresolved, including
+an explanation for the tilt of the Fundamental Plane with respect to the
+virial plane and for the scatter, or finite thickness, orthogonal to the
+plane. \citet{paper7} have used lensing and stellar velocity
+dispersions to show that the dynamical mass scales with the lensing
+(i.e., total) mass of early-type galaxies, suggesting that non-homology
+is unlikely to cause the observed tilt. Joint dynamical and stellar
+population modeling has suggested that more massive early-type galaxies have
+higher dark matter fractions \citep[e.g.,][]{padmanabhan} that could
+explain most of the tilt \citep{tortora}. These models depend on
+assumptions about the initial mass function and do not readily
+explain how the luminous bulge and a dark matter halo might `conspire'
+to produce an isothermal total mass density profile; a well-defined
+set of galaxies with accurate photometric data is required in order
+to perform the detailed modeling necessary to accurately separate
+the dark and luminous mass components.
+
+A particularly powerful tool is the
+combination of precise strong gravitational lensing mass measurements,
+stellar velocity dispersions, and accurate stellar mass estimates.
+The advent of the Sloan Lens ACS Survey \citep[SLACS;][papers I-VIII,
+respectively]{paper1,paper2,paper3,paper4,paper5,paper6,paper7,paper8}
+has made this type of modeling feasible for the first time for a large
+and uniformly selected dataset. One of the key features of SLACS is
+that each lens contains all of the information necessary to perform a
+robust decomposition of the matter content in the central regions of
+galaxies. For example, the SDSS spectroscopy provides a precise
+measurement of the stellar velocity dispersion and the lens and source
+redshifts, while high-resolution Hubble Space Telescope (HST) imaging
+yields a detailed view of the lensed background source and the surface brightness profile of the lensing galaxy.
+
+In this paper we present the definitive SLACS sample and an essential
+component necessary for disentangling the dark and luminous matter in
+early-type galaxies: multi-band optical and near-infrared imaging from
+HST. The photometric colors provided by HST allow us to accurately
+constrain the stellar mass of the lensing galaxy, thereby determining
+the normalization of the luminous component of the mass
+distribution. Although other authors have investigated the stellar
+populations of SLACS lenses using SDSS photometry \citep[][hereafter
+G09]{grillo,grillo09}, we find that the HST imaging is necessary to
+adequately perform model photometry and yield unbiased stellar mass
+estimates, to the level of accuracy that is comparable with that of
+the other observables.
+
+The paper is organized as follows.  We begin by describing our new HST
+observations in Section 2. We then provide a detailed summary of the
+SLACS dataset in Section 3, including the introduction of 15 newly
+confirmed strong lenses. In Section 4 we discuss our model photometry,
+and our stellar mass estimates are detailed in Section 5. A discussion
+of the ensemble properties of SLACS lenses, including comparison with
+`twin' galaxies from the SDSS, is given in Section 6 before concluding
+with a summary of the final SLACS dataset in Section 7. All magnitudes
+are on the AB scale \citep{oke}, a standard concordance cosmology with
+$\Omega_{m}=0.3$ $\Omega_{\Lambda}=0.7$ $h=0.7$ is assumed, and base-10
+logarithms are denoted by `log' while natural logs are written as `ln.'
+
+
+\section{Multi-Color Imaging}
+A campaign was initiated to obtain HST multi-band imaging in V, I, and
+H (F555W, F814W, and F160W) for all of the confirmed SLACS lenses and
+a small number of high-probability lens candidates from Paper V using the
+ACS WFC and NICMOS NIC2 cameras (Programs 10494, 10798, and 11202; PI
+Koopmans). The programs were switched to WFPC2 after the failure of
+ACS, and F555W was replaced with F606W to exploit the improved
+throughput in F606W compared to F555W on WFPC2; we refer to these two
+filters interchangeably as the V-band throughout the rest of this paper.
+Furthermore, the failure of NICMOS in September 2008 has left 29 lenses
+unobserved in the H band. All of the ACS data were reduced using the methods
+described in Paper V. A total of 77 systems were observed with WFPC2 and 59
+systems were observed with NICMOS; this includes 12 new lens candidates not
+included in Paper V (Table \ref{T_new_targets}). A summary of the
+imaging for our targets is given in Table \ref{T_filter_info}. 
+
+\begin{deluxetable*}{lrrlllc}
+\tabletypesize{\scriptsize}
+\tablecolumns{7}
+\tablewidth{0pc}
+\tablecaption{New SLACS Targets}
+\tablehead{
+ \colhead{Name} &
+ \colhead{Right Ascension} &
+ \colhead{Declination} &
+ \colhead{$z_{fg}$}  &
+ \colhead{$z_{bg}$}  &
+ \colhead{$\sigma_{\rm SDSS}$ (km s$^{-1}$)} &
+ \colhead{Grade}
+}
+\startdata
+\input{table_new_targets.tex}
+\enddata
+\label{T_new_targets}
+\end{deluxetable*}
+
+
+\begin{deluxetable}{lccc}
+ \tabletypesize{\scriptsize}
+ \tablecolumns{4}
+ \tablewidth{0pc}
+ \tablecaption{SLACS Imaging}% Distributions}
+ \tablehead{
+  \colhead{Photometry} &
+  \colhead{\# A Lenses} &
+  \colhead{\# B Lenses} &
+  \colhead{\# X Targets}
+ }
+\startdata
+\input{table_photometry.tex}
+\enddata
+ \label{T_filter_info}
+\end{deluxetable}
+
+
+
+\subsection{WFPC2 Data Reduction}
+The SLACS WFPC2 images were reduced using a custom-built pipeline that largely follows the procedures used in the PyRAF task {\sc multidrizzle}. One significant difference is the initial step; we run a Python implementation of the {\sc lacosmic} program on each of the raw science frames to identify and mask cosmic rays. The individual exposures are then background subtracted and the {\sc crossdriz} task is used to find the sub-pixel shifts between exposures. We only use the shifts determined from the WFC3 chip because we know this chip contains a bright source (the SLACS target) to ensure robust cross correlation. This avoids problems with spurious offsets from the other chips (due to no objects in the chip frame, for example) skewing the average offset; this procedure yields image registration to better than 0.1 pixel. The 4 exposures for each chip are drizzled to an output image using a 0\farcs05 pixel scale and a pixfrac of 0.6. The drizzled images of the four chips are then placed into a common image using SWARP. All of the lens-galaxy photometry presented in this paper is performed on the pre-SWARP drizzled image of the WFC3 chip. Absolute astrometry is achieved by setting the location of the lens galaxy to the SDSS coordinates.
+
+
+\subsection{NICMOS Data Reduction}
+The SLACS lens candidates tend to be quite large compared to the NICMOS field of view, and as a result special care must be taken when reducing the NICMOS imaging. We have used the most recent version of the CALNICA pre-processing pipeline (version 4.4.1, implemented in the OPUS pipeline and applied by re-downloading the \_cal.fits images from the HST archive) to perform the flatfielding, de-biasing, linearity corrections, time-stream cosmic ray rejection, bad-pixel masking, and error model creation.
+
+One particular problem presented by the large size of the SLACS galaxies is that the unknown floating bias of each amplifier (the `pedestal') cannot be accurately quantified using standard techniques if the lens dominates the amplifier quadrant. We use an iterative approach to determine an approximation of the true pedestal by first using the STSDAS task {\sc pedsub} to remove an initial estimate of the pedestal. We next fit a model of the amplifier glow in the pedestal-subtracted images to remove residuals which were not adequately subtracted by CALNICA. The scaled amplifier glow model is then subtracted from the original data and {\sc pedsub} is performed again on the improved amplifier glow-corrected images. At this point most of the instrumental signature has been removed from the data and we apply the count-rate non-linearity correction implemented in the Python task {\sc rnlincor}. A robust clipping/fitting algorithm is then employed to determine the sky level in each exposure; this sky is subtracted and the STSDAS {\sc crossdriz} routine is used to determine offsets between exposures, yielding registration to better than 0.1 pixel. The exposures are then drizzled into a median image using the STSDAS {\sc drizzle} task. As in the standard reduction pipelines, the median image is blotted back to the original CCD frame for residual cosmic ray/bad pixel detection. However, we also use the blotted median image to subtract a model of the astrophysical sources, leaving residuals which are dominated by the quadrant-dependent errors in the pedestal removal. The residual bias in each quadrant is found by an aggressively clipped mean and removed. The median image used as a model for the astrophysical sources is, in practice, biased by the incorrect initial pedestal removal and further iterations should lead to progressively better de-biased data. However, we have found that one iteration is adequate to remove most of the residual bias. This procedure yields four exposures for each SLACS target which have been dark-, amplifier glow-, pedestal-, and sky background-subtracted, and these pointings are then drizzled on to a common output image with a scale of 0\farcs05 using a pixfrac of 0.8.
+
+We also take care in assuring that we have a robust estimate of the variance in this final drizzled image. We convert the \textsf{ERR} frames created by the CALINCA pipeline into variance images by squaring them; these variance images contain an estimate of the noise properties from the dark current and amplifier read noise. The single-exposure variance images are then added to the (non-background-subtracted, pre-drizzle) science images, which have been appropriately scaled by the exposure time per pixel (encoded in the \textsf{TIME} extension created by CALNICA) and the detector gain $g$, to create pixel-to-pixel variance maps for each exposure.
+%$$
+%\textsf{VAR}_{exp} = \textsf{ERR}^2 + \frac{\textsf{SCI}}{g \textsf{TIME}}.
+%$$
+These variance maps are individually drizzled to the output science coordinate frame, yielding single-exposure drizzled variance maps (\textsf{VAR}) and the drizzle `weight' (\textsf{WHT}) images. The \textsf{WHT} images are then used to determine the final variance image associated with the drizzled science image by taking a weighted sum of the \textsf{VAR} images.
+%$$
+%\textsf{VAR}_{final} = \frac{\Sigma \textsf{WHT}^2_i \textsf{VAR}_{exp,i}}{\Sigma \textsf{WHT}^2_i}.
+%$$
+We expect this procedure yields the optimal representation of the variance in each pixel of the output (stacked and drizzled) science image.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Definitive SLACS Sample in Color}
+The SLACS survey has observed 12 new targets (Table \ref{T_new_targets}) since the conclusion of the ACS program (Paper V). The WFPC2 F606W images of these targets are shown in Figure \ref{F_new_targets}, including the residuals from B-spline galaxy model subtractions (see Section 3.1). In addition to these 12 candidates, we revisit 14 systems from Paper V that had grades poorer than `A' for which we have obtained new multi-band imaging. Grade `A' refers to confirmed lenses, while grade `B' denotes probable lenses and grade `X' is used for unlikely lenses; see Paper V for a more detailed description of the grading scheme.
+
+The new NICMOS and WFCP2 data for these systems were treated in a similar manner to the ACS data of Paper V in order to establish the lensing nature of each system. The putative lensing galaxy was subtracted from each image using B-spline models, and the residuals were visually inspected for evidence of lensed images and counter-images. A consensus grade was compiled by four authors (MWA, ASB, LAM, and TT) using the same grading scheme as Paper V. Four of the systems were initially given a `B' grade by the consensus analysis but were subsequently upgraded to `A' when successful lens models were fit to the images (see below). Furthermore, SDSSJ1313+0506 has been confirmed as a lens based upon the identification of a counter-image to the background [\ion{O}{2}] emission from a DEIMOS spectrum (A. Dutton, private communication). In total, 9 of the 12 previously unobserved candidates have been confirmed as `A' lenses, and 6 systems reported on in Paper V have been upgraded to `A' status. This brings the number of grade `A' lens systems identified by SLACS to 85 (Table \ref{T_grade_A_raw}), with an additional 13 `B' candidates. A color montage of the grade `A' lenses can be found in Figure \ref{F_color_cutouts}.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f1l.eps}
+ \caption{The WFPC2 F606W image of the SLACS candidate SDSSJ2343-0030. The left panel shows the early-type morphology of the lens and evidence for the lensed nature of the background source. The right panel shows the system with B-spline model of the lensing galaxy subtracted, revealing a clear four-image lens system with a partial Einstein ring. See the electronic version of the journal for images of all 12 of the new targets.}
+ \label{F_new_targets}
+\end{figure}
+
+
+\begin{figure*}[ht]
+ \includegraphics[width=0.98\textwidth,clip]{f2.eps}
+ \caption{Color cutouts of 84 of the SLACS lenses, ordered by redshift. The lens SDSSJ1618+4353 has two primary lensing galaxies and has not been included. See the Journal version for full-resolution figure.}
+ \label{F_color_cutouts}
+\end{figure*}
+
+
+\subsection{Lensing Analysis}
+We produce singular isothermal ellipsoid (SIE) lens models \citep[e.g.,][]{kormann} for 11 of the 15 new grade A lenses. One candidate from Paper V, SDSSJ1029+6115, is shown clearly to be a lens using IFU data but our HST data do not have sufficient sensitivity to adequately model the lensing, nor do we model the spectroscopically confirmed lens SDSSJ1313+0506. Additionally, two new candidates from our WFPC2 imaging, SDSSJ1319+1504 and SDSSJ1436+3640, will require special subtractions due to the presence of nearby galaxies in the field.
+
+The SIE modeling is performed in the same manner as Paper V, with the only difference being the switch from ACS data to WFPC2 data. To briefly summarize, the mass of the lensing galaxy for each system is modeled as an SIE profile positioned on the center of the light distribution. A lens galaxy-subtracted image of the background source is created by modeling the light of the lens galaxy using a radial B-spline model and subtracting this from our HST images. The background source is modeled as single or multiple Gaussian or Sersic ellipsoid components which are lensed by ray-tracing through the SIE mass model of the lens; this lensed source is fit to the observed images in the lens galaxy-subtracted frame. The model parameters (the Einstein radius and ellipticity parameters for the lens) are first adjusted by hand before optimization by MPFIT \citep{mpfit}. The resulting models are shown in Figure \ref{F_lens_models} and the parameters of the lens models are listed in Table \ref{T_grade_A_model}. We note that these are not perfect lens models (not all of the lens are isothermal, nor are the sources always ideally described by Sersic profiles). However, the SIE models do provide accurate determinations of the Einstein radii and the masses within the Einstein radii; these are the parameters of interest for this paper.
+
+\begin{figure*}[ht]
+ \includegraphics[width=0.98\textwidth,clip]{f3j.eps}
+ \caption{The SIE lens model for the SLACS lens SDSSJ2343-0030. The five panels show: the HST image of the lens; the lensing galaxy-subtracted residuals; the model of the lensed source and the lensing critical curves (in white); the source- and lens-subtracted residuals; and the reconstructed background source and caustics (in white). See the electronic version of the journal for all 11 lens models.}
+ \label{F_lens_models}
+\end{figure*}
+
+\subsection{The SLACS Catalogs}
+The SLACS data products can be split into two categories\footnote{These data will all be available online at http://www.slacs.org}: `basic' data products which include photometric and spectroscopic measurements, and inferred data products, including parameters inferred from lens modeling and stellar population analysis. In Table \ref{T_grade_A_raw} we present our `basic' data for the grade `A' lenses, including the location on the sky, the lens and source redshifts, the lensing galaxy velocity dispersion, the morphological type, and the effective radii (measured at the intermediate axis) and magnitudes from our photometric analysis (Section 4). Table \ref{T_grade_A_model} presents the inferred quantities, including Einstein radii and masses, stellar mass estimates for Chabrier and Salpeter initial mass functions (IMFs) denoted with the subscripts `Chab' and `Salp' respectively, luminosities, and $f_{\rm *,Ein}$, the stellar fraction within the Einstein radius for each IMF.
+
+\LongTables
+\begin{deluxetable*}{lllcccrccccccc}
+\tabletypesize{\scriptsize}
+ \tablecolumns{14}
+ \tablewidth{0pc}
+ \tablecaption{Photometric and Spectroscopic Properties of SLACS Lenses}
+ \tablehead{
+   \colhead{Name} &
+   \colhead{RA} &
+   \colhead{Dec} &
+   \colhead{$z_{lens}$} &
+   \colhead{$z_{src}$} &
+   \colhead{$\sigma_{ap}$} &
+   \colhead{Morph} &
+   \colhead{m$_B$} &
+   \colhead{r$_{e,B}$} &
+   \colhead{m$_V$} &
+   \colhead{r$_{e,V}$} &
+   \colhead{m$_I$} &
+   \colhead{r$_{e,I}$} &
+   \colhead{m$_H$} \\
+   \colhead{}  &
+   \colhead{}  &
+   \colhead{}  &
+   \colhead{}  &
+   \colhead{}  &
+   \colhead{(km s$^{-1}$)}  &
+   \colhead{}  &
+   \colhead{}  &
+   \colhead{(\arcsec)}  &
+   \colhead{}  &
+   \colhead{(\arcsec)}  &
+   \colhead{}  &
+   \colhead{(\arcsec)}  &
+   \colhead{}
+ }
+\startdata
+\input{table_lens_raw.tex}
+\enddata
+\label{T_grade_A_raw}
+\tablenotetext{$\dagger$}{From the F606W filter on WFPC2.}
+\tablenotetext{$\ddagger$}{From the F555W filter on ACS.}
+\tablenotetext{$\ast$}{The lens galaxy has at least one close companion galaxy.}
+\end{deluxetable*}
+
+
+%\LongTables
+%\hspace*{3in}
+%\begin{landscape}
+%\begin{deluxetable*}{lccccccccccc}[e] 
+%\hspace{-3in}
+%\setlength{\tabcolsep}{0.05in} 
+% \tabletypesize{\scriptsize}
+% \tablecolumns{12}
+% \tablewidth{0pc}
+% \tablecaption{Lensing and Stellar Population Properties of SLACS Lenses}
+% \tablehead{
+%   \colhead{Name} &
+%   \colhead{$r_{\rm Ein}$} &
+%   \colhead{log[M$_{\rm Ein}$/M$_\odot$]} &
+%   \colhead{$f^{\rm Chab}_{\rm *,Ein}$} &
+%   \colhead{$f^{\rm Salp}_{\rm *,Ein}$} &
+%   \colhead{$\frac{f_{\rm *,Ein}}{f_{\rm *,eff}}$} &
+%   \colhead{log[M$^{\rm Chab}_*$/M$_\odot$]} &
+%   \colhead{log[M$^{\rm Salp}_*$/M$_\odot$]} &
+%   \colhead{$M_{\rm B}$} &
+%   \colhead{$M_{\rm V}$} &
+%   \colhead{$M_{\rm B,0}$} &
+%   \colhead{$M_{\rm V,0}$} \\
+% lower column
+%   \colhead{} &
+%   \colhead{(kpc)} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{} &
+%   \colhead{}
+% }
+%\startdata
+%\input{table_lens_derived.tex}
+%\enddata
+%\tablecomments{$M_{\rm B}$ and $M_{\rm V}$ are rest-frame Johnson B and V AB magnitudes inferred from our CSP modeling. $M_{\rm B,0}$ and $M_{\rm V,0}$ are the same, except the CSP models have been evolved to $z = 0$ (the ages have been increased by the amount of cosmic time between the redshift of the galaxy and $z = 0$, and the CSP models are re-evaulated with these new ages).}
+%\label{T_grade_A_model}
+%\end{deluxetable*}
+%\end{landscape}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model Photometry}
+The program GALFIT \citep{galfit} is used to perform de Vaucouleurs model fitting to the WFPC2 and NICMOS images of the lenses; we adopt the model photometry using the method from Paper V for the ACS imaging. Subimages of 30\arcsec\ on a side are used to fit the WFPC2 data, and we use the region of the NICMOS mosaic that was covered in all four pointings (generally an area approximately $15\arcsec\times15\arcsec$). Masks of neighboring galaxies and the flux from any lensed images are manually created by iteratively modeling and subtracting the lens galaxy. Bright galaxies very close to the primary lensing galaxy are simultaneously modeled with GALFIT to accurately separate the two objects. We test the robustness of the de Vaucouleurs model magnitudes obtained with GALFIT by comparing the results for lenses observed multiple times and by comparing with magnitudes from a Sersic fit with the Sersic index left as a free parameter; we find that the de Vaucouleurs magnitudes are consistent with a scatter of $\sim0.03$ magnitudes. We also record the effective radii, $r_e$, measured at the intermediate axis for the WFPC2 data and impose a typical model error of 3.5\% (e.g., Paper V; the formal statistical errors are much smaller).
+
+We perform synthetic photometry using composite stellar population (CSP) models (see Section 5); modeling was performed separately for the HST photometry and the SDSS photometry, but we focus on the HST photometry here. The several HST colors available for most systems allow us to constrain the restframe V-band luminosity quite well, and the restframe B-band magnitude with slightly larger uncertainty. The CSP models are also evolved to $z = 0$ to determine self-consistent evolved luminosities in the B and V bands; a more detailed look at the luminosity evolution will be presented in Paper X, but we note that the evolution inferred from the CSP models is in good agreement with other methods (Paper II, G09). Furthermore, we use the HST photometry and CSP models to perform synthetic photometry of the SDSS bands and compare these with the measured SDSS magnitudes for all systems with at least 3 HST bands (56 systems in total). Our comparison is with de-reddened de Vaucouleurs magnitudes (the deVMag magnitudes from the SDSS database corrected for Galactic extinction) in the bands $g,r,i,z$. We find that we are able to reproduce the SDSS photometry quite well, with typical random differences of only a few hundredths of a magnitude. To investigate the affect of the source light on SDSS photometry, we degrade our HST data to the resolution of the SDSS data (approximately 1\farcs5) and perform the photometric modeling on these data (this is done without adding additional noise; we therefore are only investigating the contribution of the background source in low-resolution imaging and without explicit masks during the modeling). We find that we are able to recover the full-resolution magnitudes quite well; in general the sources are too faint to significantly affect the lens light photometry.
+
+We have not determined aperture colors from the HST photometry for the SLACS lenses (all of our HST photometry is from full de Vaucouleurs model fits), but as a sanity check we use the SDSS photometric data to determine the restframe $g-r$ aperture colors \citep[here we use the SDSS modelMag magnitudes to determine the colors, e.g.,][]{stoughton}. As is typical of early-type galaxies, we find a tight sequence with $g-r \sim0.8$, and we plot a restframe color-magnitude diagram for the lenses in Figure \ref{F_color_magnitude}. The absence of any significant tilt in the color-magnitude relation is due to the narrow effective velocity dispersion range of the SLACS lenses \citep[comparable in width to the `constant velocity dispersion' bins used by other authors, e.g.,][]{bernardi,graves}; a slightly clearer trend is seen in a color-$\sigma$ diagram (Figure \ref{F_color_sigma}).
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f4.eps}
+ \caption{The restframe color-magnitude diagram for SLACS lenses. Black circles denote lenses at $z < 0.15$, blue crosses indicate lenses with redshift $0.15 < z < 0.2$, green squares are lenses at $0.2 < z < 0.25$, and red diamonds are for lenses with $z > 0.25$. Typical early-type galaxies in the local universe have colors ${\rm g-r} \sim0.8$.}
+ \label{F_color_magnitude}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f5.eps}
+ \caption{The restframe color-$\sigma$ diagram for SLACS lenses. The color/symbol coding is the same as in Figure \ref{F_color_magnitude}.}
+ \label{F_color_sigma}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stellar Masses and Stellar Populations}
+One of the key benefits of having multi-color imaging is the ability to determine robust stellar mass estimates, particularly when near-infrared bands are included. The stellar masses of a subset of SLACS lenses have previously been investigated using the ground-based SDSS imaging \citep[G09;][]{grillo}, but the HST-based photometric data are substantially deeper, provide significantly better angular resolution, and extend into the near infrared for most objects.
+
+We have developed a novel code to perform a Bayesian exploration of the stellar populations of galaxies using composite stellar population models produced with third-party codes \citep[e.g.,][hereafter referred to as BC03]{bc03}. The code is described in detail in the Appendix, where we test the robustness of the code and the effects of parameter degeneracies and different filter combinations, but we briefly present the salient features here. The code takes a set of photometric data (magnitudes and errors through given bands) for a galaxy at a known redshift and creates a set of interpolation models for the synthetic magnitudes derived from a grid of CSP model spectra. Because the CSP models can be evaluated at arbitrary points within the bounds of the grid, the user can place arbitrary priors on the CSP model parameters. The parameter space is then explored using a Markov chain Monte Carlo (MCMC) routine, allowing a full determination of the posterior probability distribution function.
+
+In this paper, we restrict ourselves to using BC03 to create our CSP models, employing Chabrier or Salpeter IMFs and an exponential-tau model; the choice of models and IMF will be discussed elsewhere (Treu et al. 2009, in preparation). This star formation history model includes five free parameters: the time that has passed since the beginning of the star formation ($t$), the characteristic time scale of the exponential burst ($\tau$), metallicity ($Z$), reddening (via the $\tau_V$ parameter of BC03), and the stellar mass (M$_*$; see Table 5). We place a uniform prior on $t$ such that the star formation begins between redshifts $z = 1$ and $z = 5$. An exponential prior is used for $\tau$ with scale length 1 Gyr, and we use an extinction prior that is uniform in log$[\tau_V]$. There is a known velocity dispersion-metallicity correlation, and we use the sample of \citet{gallazzi} to create a Gaussian prior on log$[Z]$; this is done by finding the mean and standard deviation on log$[Z]$ for all of the galaxies from \citet{gallazzi} with similar redshift and velocity dispersion to the lensing galaxy.
+
+\begin{deluxetable}{lll}
+\tablenum 5
+\tabletypesize{\scriptsize}
+\tablecolumns{3}
+\tablewidth{0pc}
+\tablecaption{Stellar Mass Priors}
+\tablehead{
+ \colhead{Parameter} &
+ \colhead{Type} &
+ \colhead{Range}
+}
+\startdata
+    M$_*$    &  Log-Uniform  &  $10^9$ to $10^{13}$ M$_\odot$    \\
+    $t$      &  Uniform      &  $t_{z = 1}$ to $t_{z = 5}$  \\
+    $\tau$   &  Exponential  &  scale length of 1 Gyr      \\
+    $\tau_V$ &  Log-Uniform  &  0.01 to 2.0            \\
+    $Z$      &  Log-Normal   &  See text.  
+\enddata
+%\tablenotetext{$\dagger$}{t$_{univ}$ is the age of the Universe at the redshift of the lens; t$_{univ}$ at $z = 0$ is 13.7 Gyr for our assumed cosmology.}
+\label{T_stellar_mass_priors}
+\end{deluxetable}
+
+
+
+We apply this code to the HST photometry described in Section 4 and Table \ref{T_grade_A_raw}. The results of our analysis are listed in Table \ref{T_grade_A_model}, where we report the mean and standard deviation of the marginalized posterior for the stellar mass for all systems with at least 2 HST bands; we also report the inferred stellar mass fraction within the Einstein radius ($f_{\rm *,Ein}$) for lenses with SIE models. Note that the stellar mass estimates do not include any priors from the lensing, and the inferred mass fractions within the Einstein radius may therefore exceed the total mass inferred from lensing (i.e., $f_{\rm *,Ein}$ may be greater than 1). We additionally provide the ratio of the fraction of light within the Einstein radius and the effective radius to allow easy conversion to the stellar fraction within the effective radius; note that this conversion implies an extrapolation of the lensing mass to larger radii under the assumption of an isothermal mass density profile.
+
+We have compared the stellar mass estimates derived using the HST photometry with stellar mass estimates from SDSS photometry. We first compare with the masses determined by the MPA/JHU group\footnote{Available at http://www.mpa-garching.mpg.de/SDSS/.}. This sample includes 68 of the systems with more than one band of HST imaging, and we find that the stellar mass estimates from the SDSS data are in very good agreement with our mass estimates using HST photometry (Figure \ref{F_mass_photometry_comparisons}). We also use our stellar mass estimation code to determine masses from the SDSS photometry and find that we are able to reproduce the HST masses and the MPA/JHU masses.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f6.eps}
+ \caption{Comparison between stellar masses determined using the SDSS photometry and using the HST photometry. The red crosses are a comparison with the masses determined by the MPA/JHU group using SDSS photometry while the blue circles are a comparison with the stellar masses determined by G09 from SDSS photometry. Note that G09 tend to under-estimate the stellar masses of lower mass lenses compared to the MPA/JHU group and the masses from HST photometry. The red dotted line is a linear fit to the relation between MPA/JHU and HST masses, the blue dotted line is a linear fit to the relation between G09 and HST masses, and the black dotted line indicates the identity.}
+ \label{F_mass_photometry_comparisons}
+\end{figure}
+
+G09 estimate the stellar masses of a subsample of 57 of the SLACS lenses using four different CSP models, including a BC03 delayed exponential-tau model with metallicity set to solar metallicity and without modeling the effects of dust. Figure \ref{F_mass_photometry_comparisons} shows the comparison between the G09 stellar mass estimates and our stellar mass estimates for 55 of the systems investigated by G09 (we only have single band HST imaging for two of the systems in G09). We find a slight mass-dependent bias between the G09 stellar masses and those derived from our HST imaging; the G09 estimates for lower mass lenses are systematically below the masses estimated from HST imaging. We note that galaxies with velocity dispersions similar to the SLACS lenses generally have super-solar metallicities \citep[e.g.,][]{gallazzi} and the G09 choice of solar metallicity may therefore be inappropriate; we find a range of metallicities, including some sub-solar, in our modeling. Differences in priors on the age-determining parameters ($t$ and $\tau$) could also account for the offset seen between the G09 estimates of M$_*$ and the HST and MPA/JHU masses.
+
+
+\section{The Properties of SLACS Lenses}
+The final set of SLACS lenses spans a redshift range from $z = 0.063$ to $z = 0.513$, with a median redshift of $z_{\rm med} = 0.19$. There is a strong correlation between the redshift and the mass of the lensing galaxy (as parameterized by the Einstein radius $r_{\rm Ein}$; see Figure \ref{F_redshift_rein}). This is largely the result of how SLACS lenses are selected; the SDSS spectra constitute a magnitude-limited survey\footnote{Note, however, that the SDSS luminous red galaxy survey has a fainter magnitude limit as well as color criteria.} and the highest redshift objects are therefore more luminous (Figure \ref{F_redshift_mag}) and hence more massive.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f7.eps}
+ \caption{The redshift and Einstein radius, $r_{\rm Ein}$, distributions for SLACS lenses. The median redshift is 0.19 and the median $r_{\rm Ein}$ is 4 kpc. There is a strong correlation between mass and redshift that results from the magnitude limit of the SDSS spectroscopic survey (see Figure \ref{F_redshift_mag}).}
+ \label{F_redshift_rein}
+\end{figure}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f8.eps}
+ \caption{The redshift and magnitude distributions for SLACS lenses. The strong correlation between luminosity and redshift is the result of the selection function of the SLACS lenses, which are drawn from the magnitude-limited SDSS spectroscopic survey.}
+ \label{F_redshift_mag}
+\end{figure}
+
+The 85 SLACS lenses span approximately one decade in stellar and total mass, and are approximately evenly distributed across this range. The mean stellar mass-to-light ratio (M/L) in the V band is 3.2 (5.7) for a Chabrier (Salpeter) IMF; the average total M/L within half of $r_{\rm e}$ ($r_{e/2}$) derived from lensing is 8.7 for either IMF, indicating that some dark matter must be present in both scenarios. We show the distribution of M$_*$ and the stellar mass fraction within $r_{e/2}$, $f_{*,r_{e/2}}$, for the SLACS lenses in Figure \ref{F_stellar_masses}. We use $r_{e/2}$ because it is well matched to the Einstein radii of the lenses and therefore does not depend strongly on the profile of the lens model (e.g., Paper VII). The lack of a strong correlation between these parameters, and correlations between these parameters and the total mass and stellar velocity dispersion, will be explored in more detail in Paper X. The mean stellar mass fraction within the Einstein radius of the lenses is 0.4 (0.7) with a scatter of 0.1 (0.2) for a Chabrier (Salpeter) IMF. In principle, the combination of lensing and dynamics can independently probe this fraction and will therefore discriminate between different IMF models; we leave this analysis for a forthcoming paper (Treu et al. 2009, in preparation).
+
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f9.eps}
+ \caption{The distributions of the stellar mass, M$_*$, and stellar mass fraction within $r_e/2$, $f_{*,r_{e/2}}$. There is no strong correlation between stellar mass fraction and stellar mass; the relationship between the stellar mass and other observables is explored in more detail in Paper X.}
+ \label{F_stellar_masses}
+\end{figure}
+
+As with previous SLACS papers \citep[Paper II, Paper V, Paper VIII; also see][]{auger}, we want to test any biases of the SLACS lenses compared to the parent population of SDSS galaxies from which they are drawn. In the context of this paper, this constitutes a comparison of the stellar masses of SLACS lenses to the stellar masses of SDSS galaxies with similar properties. We use the MPA/JHU SDSS stellar mass catalog to find stellar mass estimates for 100 SDSS galaxies which have a redshift within $\delta z/z < 0.1$ of the lensing galaxy and a velocity dispersion that is within 10\% of the lens velocity dispersion (twelve systems did not have 100 comparison galaxies or did not have masses in the MPA/JHU catalog and are therefore excluded from this analysis). The distributions of stellar masses for the SLACS lenses and for the comparison sample is shown in Figure \ref{F_sdss_twins}; the SLACS lenses have stellar masses which are indistinguishable from their parent population.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f10.eps}
+ \caption{The distributions of stellar masses for the SDSS comparison sample (black, open) and the SLACS lenses (green, hatched). The distributions are indistinguishable (the K-S p-value is $\sim0.95$), strengthening our conclusion that SLACS lenses do not appear to be biased with respect to massive early-type galaxies with similar stellar velocity dispersions.}
+ \label{F_sdss_twins}
+\end{figure}
+
+It has been suggested that strong gravitational lenses are likely to be more concentrated in mass than non-lensing galaxies \citep[e.g.,][]{vdv,mandelbaum}. This increased concentration may result from triaxiality, where the strong lens is preferentially aligned along the long axis. If this is the case for the SLACS lenses, and if the light follows the same distribution as the total mass, we would expect the SLACS galaxies to have smaller ellipticities than a comparison sample of galaxies (preferential alignment along the long axis will, on average, decrease the ellipticity). Note that the implications of triaxiality also depend on the number of lensed images formed \citep{rozo,mandelbaum} and two-image lenses, four-image lenses, and non-lenses would each yield different distributions of ellipticities if there is a significant bias due to triaxiality. However, Paper VIII has shown that the SLACS lenses are dominated by two-image lenses (approximately 85\% are classified as doubles; SLACS does not appear to have a bias towards finding quad lenses), and we therefore investigate the ellipticities of the full sample of lenses in comparison with non-lenses.
+
+We show the distribution of axis ratios $q$ for SLACS lenses (for consistency we use the SDSS axis ratios, but we find that these are very close to the axis ratios inferred from the HST photometry) compared to the distribution of axis ratios for the comparison sample of galaxies in Figure \ref{F_ellipticity_comparison}. We do not find that the SLACS lenses are anomalously circular or elliptical; there is no evidence from the light distribution that SLACS lenses are more concentrated than the comparison sample, although the effect should be quite small and may be unobservable with so few lenses \citep[e.g.,][]{rozo}. A decomposition of the luminous and dark matter components would provide dark matter concentrations that could be compared with simulations, but that test is beyond the scope of this paper.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.48\textwidth,clip]{f11.eps}
+ \caption{The distributions of axis ratios for the SDSS comparison sample (black, open histogram) and the SLACS lenses (green, hashed histogram). The SLACS lenses do not appear to be more circular than the comparison sample (i.e., the green histogram is not skewed toward 1), indicating a lack of evidence for a preferred axis for the lenses. The two-sample K-S probability is $\sim0.13$ for the two distributions, indicating that the two samples cannot be distinguished at greater than $\sim 1.5\sigma$ confidence.}
+ \label{F_ellipticity_comparison}
+\end{figure}
+
+
+
+\section{Discussion and Summary}
+We have presented multi-band HST observations of the complete sample of SLACS gravitational lenses. These data have been used to upgrade 6 lenses from Paper V from possible to genuine (grade `A') lens systems as well as confirming 9 newly investigated lens systems. We also present a novel fully-Bayesian stellar mass estimation code and have used this code with our HST photometry to derive stellar masses for each of the grade `A' lens systems. The new results of this work include:
+
+\begin{itemize}
+\item  The SLACS program has confirmed 15 new grade `A' lenses. SLACS has now discovered 85 confirmed lenses and has found 13 high-quality lens candidates, yielding a total of 98 likely lens systems. We have created SIE lens models with parametric sources for 11 of the new lenses to allow for accurate determination of the mass within the Einstein radii of the lenses. Approximately 80\% of the lenses have early type morphologies, while $\sim 10\%$ have spiral structure and the other $\sim 10\%$ have S0 morphologies. 
+
+\item  HST photometric colors have been used to determine accurate and precise stellar masses for the SLACS lenses. Typical statistical errors on the mass estimates are 0.1 dex, and the masses determined using HST photometry are equivalent to those estimated from SDSS photometry. We note, however, that G09 find systematically lower masses for the less massive systems ($\sim 0.1$ dex lower at 10$^{11}$ M$_\odot$). Assuming a Chabrier IMF, the mean stellar mass fraction within the Einstein radius of the lenses is 0.4 with a scatter of 0.1; the fraction increases to 0.7 with a scatter of 0.2 for a Salpeter IMF. The total mass-to-light ratio within half of the effective radius is 8.7.
+
+\item There are no substantial differences between the stellar masses and/or ellipticities of SLACS lenses and a comparison sample of SDSS `twin' galaxies. Thus, the SLACS sample appears to be, in effect, a velocity dispersion-selected sample of galaxies with the same properties as similarly-selected comparison samples from SDSS: the SLACS lenses follow the same Fundamental Plane relationship (Paper II; Paper VII), reside in the same environments \citep[Paper VIII;][]{auger}, and have the same distributions of stellar mass and ellipticity as non-lensing galaxies (this work).
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments 
+We thank J. Brinchmann, C. Conroy, C. Grillo, and C. Maraston for useful discussions regarding stellar masses and SPS codes. We also thank C. Nipoti for helpful insights and M. Blanton and D. Hogg for help regarding SDSS photometry. TT acknowledges support from the NSF thorough CAREER award NSF-0642621, by the Sloan Foundation through a Sloan Research Fellowship and by the Packard Foundation through a Packard Fellowship. LK is supported through an NWO-VIDI program subsidy (project number 639.042.505). KB acknowledges support from NASA through Hubble Fellowship grant HST-HF-01215.01-A awarded by the Space Telescope Science Institute (STScI). The work of LAM was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with NASA. Support for programs \#10494, \#10798, and \#11202 was provided by NASA through grants from the Space Telescope Science Institute. STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS5-26555. This work has made use of the SDSS database. Funding for the SDSS and SDSS-II has been provided by the Alfred P. Sloan Foundation, the Participating Institutions, the National Science Foundation, the U.S. Department of Energy, the National Aeronautics and Space Administration, the Japanese Monbukagakusho, the Max Planck Society, and the Higher Education Funding Council for England.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+
+\begin{thebibliography}{}
+
+\input{refs.tex}
+
+\end{thebibliography}
+
+\begin{appendix}
+%\appendix
+\input{appendix.tex}
+\end{appendix}
+
+\clearpage
+\LongTables
+\begin{landscape}
+\begin{deluxetable*}{lccccccccccc}[e]
+ \tabletypesize{\scriptsize}
+ \tablecolumns{12}
+ \tablewidth{0pc}
+ \tablecaption{Lensing and Stellar Population Properties of SLACS Lenses}
+ \tablehead{
+   \colhead{Name} &
+   \colhead{$r_{\rm Ein}$} &
+   \colhead{log[M$_{\rm Ein}$/M$_\odot$]} &
+   \colhead{$f^{\rm Chab}_{\rm *,Ein}$} &
+   \colhead{$f^{\rm Salp}_{\rm *,Ein}$} &
+   \colhead{$\frac{f_{\rm *,Ein}}{f_{\rm *,eff}}$} &
+   \colhead{log[M$^{\rm Chab}_*$/M$_\odot$]} &
+   \colhead{log[M$^{\rm Salp}_*$/M$_\odot$]} &
+   \colhead{$M_{\rm B}$} &
+   \colhead{$M_{\rm V}$} &
+   \colhead{$M_{\rm B,0}$} &
+   \colhead{$M_{\rm V,0}$} \\
+% lower column
+   \colhead{} &
+   \colhead{(kpc)} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{} &
+   \colhead{}
+ }
+\startdata
+\input{table_lens_derived.tex}
+\enddata
+\tablecomments{$M_{\rm B}$ and $M_{\rm V}$ are rest-frame Johnson B and V AB magnitudes inferred from our CSP modeling. $M_{\rm B,0}$ and $M_{\rm V,0}$ are the same, except the CSP models have been evolved to $z = 0$ (the ages have been increased by the amount of cosmic time between the redshift of the galaxy and $z = 0$, and the CSP models are re-evaulated with these new ages).}
+\label{T_grade_A_model}
+\end{deluxetable*}
+\clearpage
+\end{landscape}
+
+\end{document}

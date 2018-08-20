@@ -1,0 +1,639 @@
+\                                                                               
+\fixlen = T
+\RowsRetrieved =                27
+\ORIGIN  = 'IPAC Infrared Science Archive (IRSA), Caltech/JPL'
+\DATETIME= '2018-05-28 17:41:01'
+\DATABASE= 'AllWISE Source Catalog (allwise_p3as_psd)'
+\EQUINOX = 'J2000'
+\NOTE    = 'Column names with suffix _01 are from the input file UPG_PG_targets.tbl.'
+\NOTE    = 'Column cntr_01 is a sequential counter added to ID each row in the user input file UPG_PG_targets.tbl.'
+\NOTE    = 'dist_x is the distance in arcsec between each input source and its potential match in the AllWISE Source Catalog.'
+\NOTE    = 'pang_x is position angle, measured eastward from north, between the input source and potential match in the AllWISE Source Catalog. 
+\NOTE    = 'Output rows are ordered by increasing cntr_01, and for each cntr_01 by increasing dist_x.'
+\StatusFile = '/workspace/TMP_jOQTE3_26737/Gator/irsa/1302/log.1302.html'
+\SQL     = 'WHERE  A.cntr_01 = X.cntr1_x and B.cntr=X.cntr2_x '
+\SQL     = 'SELECT (300 column names follow in next row.)'
+\Upload   = 'file=UPG_PG_targets.tbl radius=5 unit=arcsec'
+\ 
+\ cntr_01 
+\ ___ entry counter (key) number (unique within table)
+\ designation 
+\ ___ unique WISE source designation
+\ ra (deg) 
+\ ___ right ascension (J2000)
+\ dec (deg) 
+\ ___ declination (J2000)
+\ sigra (arcsec) 
+\ ___ uncertainty in RA
+\ sigdec (arcsec) 
+\ ___ uncertainty in DEC
+\ sigradec (arcsec) 
+\ ___ cross-term of RA and Dec uncertainties
+\ glon (deg) 
+\ ___ galactic longitude
+\ glat (deg) 
+\ ___ galactic latitude
+\ elon (deg) 
+\ ___ ecliptic longitude
+\ elat (deg) 
+\ ___ ecliptic latitude
+\ wx (pix) 
+\ ___ x-pixel coordinate, all bands
+\ wy (pix) 
+\ ___ y-pixel coordinate, all bands
+\ cntr 
+\ ___ unique entry counter (key) number
+\ source_id 
+\ ___ unique source ID (coadd ID and source number)
+\ coadd_id 
+\ ___ coadd ID
+\ src 
+\ ___ source number in coadd
+\ w1mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 1
+\ w1sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 1
+\ w1snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 1
+\ w1rchi2 
+\ ___ instrumental profile-fit photometry reduced chi^2, band 1
+\ w2mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 2
+\ w2sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 2
+\ w2snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 2
+\ w2rchi2 
+\ ___ instrumental profile-fit photometry reduced chi^2, band 2
+\ w3mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 3
+\ w3sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 3
+\ w3snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 3
+\ w3rchi2 
+\ ___ instrumental profile-fit photometry reduced chi^2, band 3
+\ w4mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 4
+\ w4sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 4
+\ w4snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 4
+\ w4rchi2 
+\ ___ instrumental profile-fit photometry reduced chi^2, band 4
+\ rchi2 
+\ ___ instrumental profile-fit photometry reduced chi squared, total
+\ nb 
+\ ___ number of blend components used in each fit
+\ na 
+\ ___ active deblend flag (=1 if actively deblended)
+\ w1sat 
+\ ___ fraction of pixels affected by saturation, band 1
+\ w2sat 
+\ ___ fraction of pixels affected by saturation, band 2
+\ w3sat 
+\ ___ fraction of pixels affected by saturation, band 3
+\ w4sat 
+\ ___ fraction of pixels affected by saturation, band 4
+\ satnum 
+\ ___ minimum sample at which saturation occurs in frame stack, 1 char per band
+\ ra_pm (deg) 
+\ ___ Right ascension at epoch MJD=55400.0 (2010.5589) from pff model incl. motion
+\ dec_pm (deg) 
+\ ___ Declination at epoch MJD=55400.0 (2010.5589) from pff model incl. motion
+\ sigra_pm (arcsec) 
+\ ___ One-sigma uncertainty in RA from pff model incl. motion
+\ sigdec_pm (arcsec) 
+\ ___ One-sigma uncertainty in DEC  from pff model incl. motion
+\ sigradec_pm (arcsec) 
+\ ___ The co-sigma of the equatorial position uncertainties from ppf model incl motion
+\ pmra (maspyr) 
+\ ___ Apparent motion in RA
+\ sigpmra (maspyr) 
+\ ___ Uncertainty in the RA motion estimate
+\ pmdec (maspyr) 
+\ ___ Apparent motion in Dec
+\ sigpmdec (maspyr) 
+\ ___ Uncertainty in the Dec  motion estimate
+\ w1rchi2_pm 
+\ ___ Reduced chi^2 of the W1 profile-fit photometry measurement including motion est
+\ w2rchi2_pm 
+\ ___ Reduced chi^2 of the W2 profile-fit photometry measurement including motion est
+\ w3rchi2_pm 
+\ ___ Reduced chi^2 of the W3 profile-fit photometry measurement including motion est
+\ w4rchi2_pm 
+\ ___ Reduced chi^2 of the W4 profile-fit photometry measurement including motion est
+\ rchi2_pm 
+\ ___ Combined Reduced chi^2 in all bands for the pff photometry includes src motion
+\ pmcode 
+\ ___ Motion estimate quality code
+\ cc_flags 
+\ ___ prioritized artifacts affecting the source in each band
+\ rel 
+\ ___ Small separation multiple detection flag
+\ ext_flg 
+\ ___ probability that source morphology is not consistent with single PSF
+\ var_flg 
+\ ___ probability that flux varied in any band greater than amount expected from unc.s
+\ ph_qual 
+\ ___ photometric quality of each band (A=highest, U=upper limit)
+\ det_bit 
+\ ___ bit-encoded integer indicating detection for each band
+\ moon_lev 
+\ ___ level of moon contamination in coadd (ceiling(#frmmoon/#frames*10)), 1 per band
+\ w1nm 
+\ ___ number of profile-fit flux measurements for source with SNR >= 3, band 1
+\ w1m 
+\ ___ number of profile-fit flux measurements for source, band 1
+\ w2nm 
+\ ___ number of profile-fit flux measurements for source with SNR >= 3, band 2
+\ w2m 
+\ ___ number of profile-fit flux measurements for source, band 2
+\ w3nm 
+\ ___ number of profile-fit flux measurements for source with SNR >= 3, band 3
+\ w3m 
+\ ___ number of profile-fit flux measurements for source, band 3
+\ w4nm 
+\ ___ number of profile-fit flux measurements for source with SNR >= 3, band 4
+\ w4m 
+\ ___ number of profile-fit flux measurements for source, band 4
+\ w1cov 
+\ ___ mean coverage depth, band 1
+\ w2cov 
+\ ___ mean coverage depth, band 2
+\ w3cov 
+\ ___ mean coverage depth, band 3
+\ w4cov 
+\ ___ mean coverage depth, band 4
+\ w1cc_map 
+\ ___ contamination and confusion bit array for the source in band 1
+\ w1cc_map_str 
+\ ___ contamination and confusion character array for the source in band 1
+\ w2cc_map 
+\ ___ contamination and confusion bit array for the source in band 2
+\ w2cc_map_str 
+\ ___ contamination and confusion character array for the source in band 2
+\ w3cc_map 
+\ ___ contamination and confusion bit array for the source in band 3
+\ w3cc_map_str 
+\ ___ contamination and confusion character array for the source in band 3
+\ w4cc_map 
+\ ___ contamination and confusion bit array for the source in band 4
+\ w4cc_map_str 
+\ ___ contamination and confusion character array for the source in band 4
+\ best_use_cntr 
+\ ___ 'cntr' of source to use from 'best' duplicate resolution group for this source
+\ ngrp 
+\ ___ number of additional duplicate resolution groups in which this source resides
+\ w1flux (dn) 
+\ ___ profile-fit photometry raw flux, band 1
+\ w1sigflux (dn) 
+\ ___ profile-fit photometry raw flux uncertainty, band 1
+\ w1sky (dn) 
+\ ___ sky background value, band 1
+\ w1sigsk (dn) 
+\ ___ sky background value uncertainty, band 1
+\ w1conf (dn) 
+\ ___ sky confusion based on the uncertainty images, band 1
+\ w2flux (dn) 
+\ ___ profile-fit photometry raw flux, band 2
+\ w2sigflux (dn) 
+\ ___ profile-fit photometry raw flux uncertainty, band 2
+\ w2sky (dn) 
+\ ___ sky background value, band 2
+\ w2sigsk (dn) 
+\ ___ sky background value uncertainty, band 2
+\ w2conf (dn) 
+\ ___ sky confusion based on the uncertainty images, band 2
+\ w3flux (dn) 
+\ ___ profile-fit photometry raw flux, band 3
+\ w3sigflux (dn) 
+\ ___ profile-fit photometry raw flux uncertainty, band 3
+\ w3sky (dn) 
+\ ___ sky background value, band 3
+\ w3sigsk (dn) 
+\ ___ sky background value uncertainty, band 3
+\ w3conf (dn) 
+\ ___ sky confusion based on the uncertainty images, band 3
+\ w4flux (dn) 
+\ ___ profile-fit photometry raw flux, band 4
+\ w4sigflux (dn) 
+\ ___ profile-fit photometry raw flux uncertainty, band 4
+\ w4sky (dn) 
+\ ___ sky background value, band 4
+\ w4sigsk (dn) 
+\ ___ sky background value uncertainty, band 4
+\ w4conf (dn) 
+\ ___ sky confusion based on the uncertainty images, band 4
+\ w1mag (mag) 
+\ ___ instrumental standard aperture mag w/ aperture correction applied, band 1
+\ w1sigm (mag) 
+\ ___ instrumental standard aperture mag uncertainty, band 1
+\ w1flg 
+\ ___ instrumental standard aperture flag, band 1
+\ w1mcor (mag) 
+\ ___ instrumental aperture correction, band 1, standard aperture
+\ w2mag (mag) 
+\ ___ instrumental standard aperture mag w/ aperture correction applied, band 2
+\ w2sigm (mag) 
+\ ___ instrumental standard aperture mag uncertainty, band 2
+\ w2flg 
+\ ___ instrumental standard aperture flag, band 2
+\ w2mcor (mag) 
+\ ___ instrumental aperture correction, band 2, standard aperture
+\ w3mag (mag) 
+\ ___ instrumental standard aperture mag w/ aperture correction applied, band 3
+\ w3sigm (mag) 
+\ ___ instrumental standard aperture mag uncertainty, band 3
+\ w3flg 
+\ ___ instrumental standard aperture flag, band 3
+\ w3mcor (mag) 
+\ ___ instrumental aperture correction, band 3, standard aperture
+\ w4mag (mag) 
+\ ___ instrumental standard aperture mag w/ aperture correction applied, band 4
+\ w4sigm (mag) 
+\ ___ instrumental standard aperture mag uncertainty, band 4
+\ w4flg 
+\ ___ instrumental standard aperture flag, band 4
+\ w4mcor (mag) 
+\ ___ instrumental aperture correction, band 4, standard aperture
+\ w1mag_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag, band 1
+\ w1sigm_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag uncertainty, band 1
+\ w1flg_1 
+\ ___ aperture 1 instrumental aperture flag, band 1
+\ w2mag_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag, band 2
+\ w2sigm_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag uncertainty, band 2
+\ w2flg_1 
+\ ___ aperture 1 instrumental aperture flag, band 2
+\ w3mag_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag, band 3
+\ w3sigm_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag uncertainty, band 3
+\ w3flg_1 
+\ ___ aperture 1 instrumental aperture flag, band 3
+\ w4mag_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag, band 4
+\ w4sigm_1 (mag) 
+\ ___ aperture 1 instrumental aperture mag uncertainty, band 4
+\ w4flg_1 
+\ ___ aperture 1 instrumental aperture flag, band 4
+\ w1mag_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag, band 1
+\ w1sigm_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag uncertainty, band 1
+\ w1flg_2 
+\ ___ aperture 2 instrumental aperture flag, band 1
+\ w2mag_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag, band 2
+\ w2sigm_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag uncertainty, band 2
+\ w2flg_2 
+\ ___ aperture 2 instrumental aperture flag, band 2
+\ w3mag_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag, band 3
+\ w3sigm_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag uncertainty, band 3
+\ w3flg_2 
+\ ___ aperture 2 instrumental aperture flag, band 3
+\ w4mag_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag, band 4
+\ w4sigm_2 (mag) 
+\ ___ aperture 2 instrumental aperture mag uncertainty, band 4
+\ w4flg_2 
+\ ___ aperture 2 instrumental aperture flag, band 4
+\ w1mag_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag, band 1
+\ w1sigm_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag uncertainty, band 1
+\ w1flg_3 
+\ ___ aperture 3 instrumental aperture flag, band 1
+\ w2mag_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag, band 2
+\ w2sigm_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag uncertainty, band 2
+\ w2flg_3 
+\ ___ aperture 3 instrumental aperture flag, band 2
+\ w3mag_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag, band 3
+\ w3sigm_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag uncertainty, band 3
+\ w3flg_3 
+\ ___ aperture 3 instrumental aperture flag, band 3
+\ w4mag_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag, band 4
+\ w4sigm_3 (mag) 
+\ ___ aperture 3 instrumental aperture mag uncertainty, band 4
+\ w4flg_3 
+\ ___ aperture 3 instrumental aperture flag, band 4
+\ w1mag_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag, band 1
+\ w1sigm_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag uncertainty, band 1
+\ w1flg_4 
+\ ___ aperture 4 instrumental aperture flag, band 1
+\ w2mag_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag, band 2
+\ w2sigm_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag uncertainty, band 2
+\ w2flg_4 
+\ ___ aperture 4 instrumental aperture flag, band 2
+\ w3mag_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag, band 3
+\ w3sigm_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag uncertainty, band 3
+\ w3flg_4 
+\ ___ aperture 4 instrumental aperture flag, band 3
+\ w4mag_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag, band 4
+\ w4sigm_4 (mag) 
+\ ___ aperture 4 instrumental aperture mag uncertainty, band 4
+\ w4flg_4 
+\ ___ aperture 4 instrumental aperture flag, band 4
+\ w1mag_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag, band 1
+\ w1sigm_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag uncertainty, band 1
+\ w1flg_5 
+\ ___ aperture 5 instrumental aperture flag, band 1
+\ w2mag_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag, band 2
+\ w2sigm_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag uncertainty, band 2
+\ w2flg_5 
+\ ___ aperture 5 instrumental aperture flag, band 2
+\ w3mag_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag, band 3
+\ w3sigm_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag uncertainty, band 3
+\ w3flg_5 
+\ ___ aperture 5 instrumental aperture flag, band 3
+\ w4mag_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag, band 4
+\ w4sigm_5 (mag) 
+\ ___ aperture 5 instrumental aperture mag uncertainty, band 4
+\ w4flg_5 
+\ ___ aperture 5 instrumental aperture flag, band 4
+\ w1mag_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag, band 1
+\ w1sigm_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag uncertainty, band 1
+\ w1flg_6 
+\ ___ aperture 6 instrumental aperture flag, band 1
+\ w2mag_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag, band 2
+\ w2sigm_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag uncertainty, band 2
+\ w2flg_6 
+\ ___ aperture 6 instrumental aperture flag, band 2
+\ w3mag_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag, band 3
+\ w3sigm_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag uncertainty, band 3
+\ w3flg_6 
+\ ___ aperture 6 instrumental aperture flag, band 3
+\ w4mag_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag, band 4
+\ w4sigm_6 (mag) 
+\ ___ aperture 6 instrumental aperture mag uncertainty, band 4
+\ w4flg_6 
+\ ___ aperture 6 instrumental aperture flag, band 4
+\ w1mag_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag, band 1
+\ w1sigm_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag uncertainty, band 1
+\ w1flg_7 
+\ ___ aperture 7 instrumental aperture flag, band 1
+\ w2mag_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag, band 2
+\ w2sigm_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag uncertainty, band 2
+\ w2flg_7 
+\ ___ aperture 7 instrumental aperture flag, band 2
+\ w3mag_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag, band 3
+\ w3sigm_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag uncertainty, band 3
+\ w3flg_7 
+\ ___ aperture 7 instrumental aperture flag, band 3
+\ w4mag_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag, band 4
+\ w4sigm_7 (mag) 
+\ ___ aperture 7 instrumental aperture mag uncertainty, band 4
+\ w4flg_7 
+\ ___ aperture 7 instrumental aperture flag, band 4
+\ w1mag_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag, band 1
+\ w1sigm_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag uncertainty, band 1
+\ w1flg_8 
+\ ___ aperture 8 instrumental aperture flag, band 1
+\ w2mag_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag, band 2
+\ w2sigm_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag uncertainty, band 2
+\ w2flg_8 
+\ ___ aperture 8 instrumental aperture flag, band 2
+\ w3mag_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag, band 3
+\ w3sigm_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag uncertainty, band 3
+\ w3flg_8 
+\ ___ aperture 8 instrumental aperture flag, band 3
+\ w4mag_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag, band 4
+\ w4sigm_8 (mag) 
+\ ___ aperture 8 instrumental aperture mag uncertainty, band 4
+\ w4flg_8 
+\ ___ aperture 8 instrumental aperture flag, band 4
+\ w1magp (mag) 
+\ ___ profile-fit repeatability mag -- inverse-variance weighted mean mag, band 1
+\ w1sigp1 (mag) 
+\ ___ standard deviation of population of profile-fit repeatability mag, band 1
+\ w1sigp2 (mag) 
+\ ___ standard deviation of the mean of profile-fit repeatability mag, band 1
+\ w1k 
+\ ___ Stetson K variability index, band 1
+\ w1ndf 
+\ ___ number degrees of freedom in variability chi^2, band 1
+\ w1mlq 
+\ ___ -ln(Q), where Q = 1 - P(chi^2), band 1
+\ w1mjdmin 
+\ ___ minimum modified Julian Date of frame extractions, band 1
+\ w1mjdmax 
+\ ___ maximum modified Julian Date of frame extractions, band 1
+\ w1mjdmean 
+\ ___ mean modified Julian Date of frame extractions, band 1
+\ w2magp (mag) 
+\ ___ profile-fit repeatability mag -- inverse-variance weighted mean mag, band 2
+\ w2sigp1 (mag) 
+\ ___ standard deviation of the population of profile-fit repeatability mag, band 2
+\ w2sigp2 (mag) 
+\ ___ standard deviation of the mean of profile-fit repeatability mag, band 2
+\ w2k 
+\ ___ Stetson K variability index, band 2
+\ w2ndf 
+\ ___ number degrees of freedom in variability chi^2, band 2
+\ w2mlq 
+\ ___ -ln(Q), where Q = 1 - P(chi^2), band 2
+\ w2mjdmin 
+\ ___ minimum modified Julian Date of frame extractions, band 2
+\ w2mjdmax 
+\ ___ maximum modified Julian Date of frame extractions, band 2
+\ w2mjdmean 
+\ ___ mean modified Julian Date of frame extractions, band 2
+\ w3magp (mag) 
+\ ___ profile-fit repeatability mag -- inverse-variance weighted mean mag, band 3
+\ w3sigp1 (mag) 
+\ ___ standard deviation of the population of profile-fit repeatability mag, band 3
+\ w3sigp2 (mag) 
+\ ___ standard deviation of the mean of profile-fit repeatability mag, band 3
+\ w3k 
+\ ___ Stetson K variability index, band 3
+\ w3ndf 
+\ ___ number degrees of freedom in variability chi^2, band 3
+\ w3mlq 
+\ ___ -ln(Q), where Q = 1 - P(chi^2), band 3
+\ w3mjdmin 
+\ ___ minimum modified Julian Date of frame extractions, band 3
+\ w3mjdmax 
+\ ___ maximum modified Julian Date of frame extractions, band 3
+\ w3mjdmean 
+\ ___ mean modified Julian Date of frame extractions, band 3
+\ w4magp (mag) 
+\ ___ profile-fit repeatability mag -- inverse-variance weighted mean mag, band 4
+\ w4sigp1 (mag) 
+\ ___ standard deviation of the population of profile-fit repeatability mag, band 4
+\ w4sigp2 (mag) 
+\ ___ standard deviation of the mean of profile-fit repeatability mag, band 4
+\ w4k 
+\ ___ Stetson K variability index, band 4
+\ w4ndf 
+\ ___ number degrees of freedom in variability chi^2, band 4
+\ w4mlq 
+\ ___ -ln(Q), where Q = 1 - P(chi^2), band 4
+\ w4mjdmin 
+\ ___ minimum modified Julian Date of frame extractions, band 4
+\ w4mjdmax 
+\ ___ maximum modified Julian Date of frame extractions, band 4
+\ w4mjdmean 
+\ ___ mean modified Julian Date of frame extractions, band 4
+\ rho12 (percent) 
+\ ___ band 1 - band 2 correlation coefficient
+\ rho23 (percent) 
+\ ___ band 2 - band 3 correlation coefficient
+\ rho34 (percent) 
+\ ___ band 3 - band 4 correlation coefficient
+\ q12 
+\ ___ -log10(1 - P(rho12)), given no real correlation
+\ q23 
+\ ___ -log10(1 - P(rho23)), given no real correlation
+\ q34 
+\ ___ -log10(1 - P(rho34)), given no real correlation
+\ xscprox (arcsec) 
+\ ___ distance between source center and XSC galaxy
+\ w1rsemi (arcsec) 
+\ ___ semi-major axis of galaxy from XSC, band 1
+\ w1ba 
+\ ___ axis ratio of galaxy from XSC, band 1
+\ w1pa (deg) 
+\ ___ position angle (E of N) of galaxy from XSC, band 1
+\ w1gmag (mag) 
+\ ___ elliptical aperture mag of extracted galaxy, band 1
+\ w1gerr (mag) 
+\ ___ elliptical aperture mag uncertainty of extracted galaxy, band 1
+\ w1gflg 
+\ ___ elliptical aperture flag of extracted galaxy, band 1
+\ w2rsemi (arcsec) 
+\ ___ semi-major axis of galaxy from XSC, band 2
+\ w2ba 
+\ ___ axis ratio of galaxy from XSC, band 2
+\ w2pa (deg) 
+\ ___ position angle (E of N) of galaxy from XSC, band 2
+\ w2gmag (mag) 
+\ ___ elliptical aperture mag of extracted galaxy, band 2
+\ w2gerr (mag) 
+\ ___ elliptical aperture mag uncertainty of extracted galaxy, band 2
+\ w2gflg 
+\ ___ elliptical aperture flag of extracted galaxy, band 2
+\ w3rsemi (arcsec) 
+\ ___ semi-major axis of galaxy from XSC, band 3
+\ w3ba 
+\ ___ axis ratio of galaxy from XSC, band 3
+\ w3pa (deg) 
+\ ___ position angle (E of N) of galaxy from XSC, band 3
+\ w3gmag (mag) 
+\ ___ elliptical aperture mag of extracted galaxy, band 3
+\ w3gerr (mag) 
+\ ___ elliptical aperture mag uncertainty of extracted galaxy, band 3
+\ w3gflg 
+\ ___ elliptical aperture flag of extracted galaxy, band 3
+\ w4rsemi (arcsec) 
+\ ___ semi-major axis of galaxy from XSC, band 4
+\ w4ba 
+\ ___ axis ratio of galaxy from XSC, band 4
+\ w4pa (deg) 
+\ ___ position angle (E of N) of galaxy from XSC, band 4
+\ w4gmag (mag) 
+\ ___ elliptical aperture mag of extracted galaxy, band 4
+\ w4gerr (mag) 
+\ ___ elliptical aperture mag uncertainty of extracted galaxy, band 4
+\ w4gflg 
+\ ___ elliptical aperture flag of extracted galaxy, band 4
+\ tmass_key 
+\ ___ closest associated 2MASS All-Sky Release PSC key
+\ r_2mass (arcsec) 
+\ ___ radial offset between WISE src and associated 2MASS src
+\ pa_2mass (deg) 
+\ ___ position angle (E of N) of vector from WISE src to associated 2MASS src
+\ n_2mass 
+\ ___ number of 2MASS All-Sky PSC entries found within search radius of WISE src
+\ j_m_2mass (mag) 
+\ ___ J magnitude entry of the associated 2MASS All-Sky PSC source
+\ j_msig_2mass (mag) 
+\ ___ J photometric uncertainty of the associated 2MASS All-Sky PSC source
+\ h_m_2mass (mag) 
+\ ___ H magnitude entry of the associated 2MASS All-Sky PSC source
+\ h_msig_2mass (mag) 
+\ ___ H photometric uncertainty of the associated 2MASS All-Sky PSC source
+\ k_m_2mass (mag) 
+\ ___ Ks magnitude entry of the associated 2MASS All-Sky PSC source
+\ k_msig_2mass (mag) 
+\ ___ Ks photometric uncertainty of the associated 2MASS All-Sky PSC source
+\ htm20 
+\ ___ HTM20 spatial index key
+\ 
+|      cntr_01|       dist_x|       pang_x|               ra_01|              dec_01|            major_01|          designation|          ra|         dec|    sigra|   sigdec|  sigradec|        glon|        glat|        elon|        elat|       wx|       wy|                cntr|                    source_id|             coadd_id|    src|  w1mpro| w1sigmpro|    w1snr|   w1rchi2|  w2mpro| w2sigmpro|    w2snr|   w2rchi2|  w3mpro| w3sigmpro|    w3snr|   w3rchi2|  w4mpro| w4sigmpro|    w4snr|   w4rchi2|     rchi2|   nb|   na|  w1sat|  w2sat|  w3sat|  w4sat| satnum|       ra_pm|      dec_pm| sigra_pm| sigdec_pm| sigradec_pm|     pmra|  sigpmra|    pmdec| sigpmdec| w1rchi2_pm| w2rchi2_pm| w3rchi2_pm| w4rchi2_pm|  rchi2_pm| pmcode| cc_flags|  rel| ext_flg| var_flg| ph_qual| det_bit| moon_lev|   w1nm|    w1m|   w2nm|    w2m|   w3nm|    w3m|   w4nm|    w4m|   w1cov|   w2cov|   w3cov|   w4cov|  w1cc_map| w1cc_map_str|  w2cc_map| w2cc_map_str|  w3cc_map| w3cc_map_str|  w4cc_map| w4cc_map_str|       best_use_cntr| ngrp|      w1flux|   w1sigflux|     w1sky| w1sigsk|    w1conf|      w2flux|   w2sigflux|     w2sky| w2sigsk|    w2conf|      w3flux|   w3sigflux|     w3sky| w3sigsk|    w3conf|      w4flux|   w4sigflux|     w4sky| w4sigsk|    w4conf|   w1mag| w1sigm| w1flg| w1mcor|   w2mag| w2sigm| w2flg| w2mcor|   w3mag| w3sigm| w3flg| w3mcor|   w4mag| w4sigm| w4flg| w4mcor| w1mag_1| w1sigm_1| w1flg_1| w2mag_1| w2sigm_1| w2flg_1| w3mag_1| w3sigm_1| w3flg_1| w4mag_1| w4sigm_1| w4flg_1| w1mag_2| w1sigm_2| w1flg_2| w2mag_2| w2sigm_2| w2flg_2| w3mag_2| w3sigm_2| w3flg_2| w4mag_2| w4sigm_2| w4flg_2| w1mag_3| w1sigm_3| w1flg_3| w2mag_3| w2sigm_3| w2flg_3| w3mag_3| w3sigm_3| w3flg_3| w4mag_3| w4sigm_3| w4flg_3| w1mag_4| w1sigm_4| w1flg_4| w2mag_4| w2sigm_4| w2flg_4| w3mag_4| w3sigm_4| w3flg_4| w4mag_4| w4sigm_4| w4flg_4| w1mag_5| w1sigm_5| w1flg_5| w2mag_5| w2sigm_5| w2flg_5| w3mag_5| w3sigm_5| w3flg_5| w4mag_5| w4sigm_5| w4flg_5| w1mag_6| w1sigm_6| w1flg_6| w2mag_6| w2sigm_6| w2flg_6| w3mag_6| w3sigm_6| w3flg_6| w4mag_6| w4sigm_6| w4flg_6| w1mag_7| w1sigm_7| w1flg_7| w2mag_7| w2sigm_7| w2flg_7| w3mag_7| w3sigm_7| w3flg_7| w4mag_7| w4sigm_7| w4flg_7| w1mag_8| w1sigm_8| w1flg_8| w2mag_8| w2sigm_8| w2flg_8| w3mag_8| w3sigm_8| w3flg_8| w4mag_8| w4sigm_8| w4flg_8|  w1magp| w1sigp1| w1sigp2|    w1k|  w1ndf|  w1mlq|       w1mjdmin|       w1mjdmax|      w1mjdmean|  w2magp| w2sigp1| w2sigp2|    w2k|  w2ndf|  w2mlq|       w2mjdmin|       w2mjdmax|      w2mjdmean|  w3magp| w3sigp1| w3sigp2|    w3k|  w3ndf|  w3mlq|       w3mjdmin|       w3mjdmax|      w3mjdmean|  w4magp| w4sigp1| w4sigp2|    w4k|  w4ndf|  w4mlq|       w4mjdmin|       w4mjdmax|      w4mjdmean|   rho12|   rho23|   rho34|  q12|  q23|  q34|  xscprox|  w1rsemi|   w1ba|    w1pa|  w1gmag| w1gerr| w1gflg|  w2rsemi|   w2ba|    w2pa|  w2gmag| w2gerr| w2gflg|  w3rsemi|   w3ba|    w3pa|  w3gmag| w3gerr| w3gflg|  w4rsemi|   w4ba|    w4pa|  w4gmag| w4gerr| w4gflg|  tmass_key| r_2mass| pa_2mass| n_2mass| j_m_2mass| j_msig_2mass| h_m_2mass| h_msig_2mass| k_m_2mass| k_msig_2mass|               htm20|
+|         long|       double|       double|              double|              double|              double|                 char|      double|      double|   double|   double|    double|      double|      double|      double|      double|   double|   double|                long|                         char|                 char|    int|  double|    double|   double|    double|  double|    double|   double|    double|  double|    double|   double|    double|  double|    double|   double|    double|    double|  int|  int| double| double| double| double|   char|      double|      double|   double|    double|      double|      int|      int|      int|      int|     double|     double|     double|     double|    double|   char|     char| char|     int|    char|    char|     int|     char|    int|    int|    int|    int|    int|    int|    int|    int|  double|  double|  double|  double|       int|         char|       int|         char|       int|         char|       int|         char|                long|  int|      double|      double|    double|  double|    double|      double|      double|    double|  double|    double|      double|      double|    double|  double|    double|      double|      double|    double|  double|    double|  double| double|   int| double|  double| double|   int| double|  double| double|   int| double|  double| double|   int| double|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|   double|     int|  double|  double|  double| double|    int| double|         double|         double|         double|  double|  double|  double| double|    int| double|         double|         double|         double|  double|  double|  double| double|    int| double|         double|         double|         double|  double|  double|  double| double|    int| double|         double|         double|         double|     int|     int|     int|  int|  int|  int|   double|   double| double|  double|  double| double|    int|   double| double|  double|  double| double|    int|   double| double|  double|  double| double|    int|   double| double|  double|  double| double|    int|        int|  double|   double|     int|    double|       double|    double|       double|    double|       double|                long|
+|             |       arcsec|          deg|                    |                    |                    |                     |         deg|         deg|   arcsec|   arcsec|    arcsec|         deg|         deg|         deg|         deg|      pix|      pix|                    |                             |                     |       |     mag|       mag|         |          |     mag|       mag|         |          |     mag|       mag|         |          |     mag|       mag|         |          |          |     |     |       |       |       |       |       |         deg|         deg|   arcsec|    arcsec|      arcsec|   maspyr|   maspyr|   maspyr|   maspyr|           |           |           |           |          |       |         |     |        |        |        |        |         |       |       |       |       |       |       |       |       |        |        |        |        |          |             |          |             |          |             |          |             |                    |     |          dn|          dn|        dn|      dn|        dn|          dn|          dn|        dn|      dn|        dn|          dn|          dn|        dn|      dn|        dn|          dn|          dn|        dn|      dn|        dn|     mag|    mag|      |    mag|     mag|    mag|      |    mag|     mag|    mag|      |    mag|     mag|    mag|      |    mag|     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|      mag|        |     mag|     mag|     mag|       |       |       |               |               |               |     mag|     mag|     mag|       |       |       |               |               |               |     mag|     mag|     mag|       |       |       |               |               |               |     mag|     mag|     mag|       |       |       |               |               |               | percent| percent| percent|     |     |     |   arcsec|   arcsec|       |     deg|     mag|    mag|       |   arcsec|       |     deg|     mag|    mag|       |   arcsec|       |     deg|     mag|    mag|       |   arcsec|       |     deg|     mag|    mag|       |           |  arcsec|      deg|        |       mag|          mag|       mag|          mag|       mag|          mag|                    |
+|         null|         null|         null|                null|                null|                null|                 null|        null|        null|     null|     null|      null|        null|        null|        null|        null|     null|     null|                null|                         null|                 null|   null|    null|      null|     null|      null|    null|      null|     null|      null|    null|      null|     null|      null|    null|      null|     null|      null|      null| null| null|   null|   null|   null|   null|   null|        null|        null|     null|      null|        null|     null|     null|     null|     null|       null|       null|       null|       null|      null|   null|     null| null|    null|    null|    null|    null|     null|   null|   null|   null|   null|   null|   null|   null|   null|    null|    null|    null|    null|      null|         null|      null|         null|      null|         null|      null|         null|                null| null|        null|        null|      null|    null|      null|        null|        null|      null|    null|      null|        null|        null|      null|    null|      null|        null|        null|      null|    null|      null|    null|   null|  null|   null|    null|   null|  null|   null|    null|   null|  null|   null|    null|   null|  null|   null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|     null|    null|    null|    null|    null|   null|   null|   null|           null|           null|           null|    null|    null|    null|   null|   null|   null|           null|           null|           null|    null|    null|    null|   null|   null|   null|           null|           null|           null|    null|    null|    null|   null|   null|   null|           null|           null|           null|    null|    null|    null| null| null| null|     null|     null|   null|    null|    null|   null|   null|     null|   null|    null|    null|   null|   null|     null|   null|    null|    null|   null|   null|     null|   null|    null|    null|   null|   null|       null|    null|     null|    null|      null|         null|      null|         null|      null|         null|                null|
+             2      0.686012     44.205921     1.3646358000e+02     1.3116700000e+00     5.0000000000e+00   J090551.29+011842.5  136.4637129    1.3118066    0.0710    0.0747     0.0024  228.4963010   30.1905549  138.5127718  -14.6502735  1187.511  1517.525  1361101501351020878          1361p015_ac51-020878         1361p015_ac51   20878   14.543      0.032      34.0  1.514e+00   14.485      0.053      20.5  9.173e-01   12.189      0.340       3.2  1.090e+00    8.940       null      -0.6  9.478e-01  1.144e+00     1     0   0.000   0.000   0.000   0.000    0000  136.4637111    1.3118073    0.0784     0.0821       0.0119      -138       167         8       185   1.512e+00   9.172e-01   1.090e+00   9.479e-01  1.144e+00   1N000      dd00  null        0     00nn     AABU        7      0000      26      26      26      26       0      14       0      14   26.333   26.428   13.902   13.957          1             d          1             d          0          null          0          null  1361101501351020878     0   2.4143e+02   7.0958e+00     14.402    3.063      0.022   1.0137e+02   4.9377e+00     37.481    3.811      0.074   2.1096e+02   6.6040e+01   2332.580   29.860      5.984  -1.2904e+01   2.1044e+01    738.324   12.057      2.424   14.278   0.039      0   0.261   14.274   0.078      0   0.319   11.544   0.251      0   0.825    8.550    null     32   0.576   15.031     0.044        0   15.114     0.092        0   13.080     0.352        0   11.083      null       32   14.539     0.039        0   14.593     0.078        0   12.369     0.251        0    9.126      null       32   14.299     0.039        1   14.369     0.082        1   11.975     0.224        0    8.712      null       32   14.164     0.043        1   14.298     0.096        1   11.733     0.222        1    8.390      null       32   14.072     0.048        1   14.302     0.115        1   11.521     0.218        1    8.180      null       32   13.983     0.052        1   14.314     0.138        1   11.318     0.214        1    8.052      null       32   13.877     0.054        1   14.287     0.155        1   11.158     0.213        1    8.057      null       32   13.761     0.056        1   14.226     0.169        1   11.038     0.218        1    7.968      null       32   14.526    0.082    0.016   0.819      25    4.71  55319.89573865  55511.88226361  55408.57365524   14.487    0.183    0.036   0.821      25    0.28  55319.89573865  55511.88226361  55408.57365524   12.401    0.877    0.234   0.551      12    0.09  55319.89573865  55320.88808385  55320.45801790     null     null     null   0.919       4    0.10  55319.89573865  55320.88808385  55320.45801790       13       15       16     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       15531525779936 
+             3      1.085926    -58.033155     1.3224292000e+02     2.2481700000e+00     5.0000000000e+00   J084858.23+021453.9  132.2426639    2.2483297    0.0811    0.0848    -0.0067  225.1565685   27.0150364  134.0545516  -14.9666021   359.220  3969.645  1315101501351051314          1315p015_ac51-051314         1315p015_ac51   51314   14.904      0.034      32.4  1.226e+00   14.598      0.059      18.3  9.629e-01   12.525       null      -0.3  9.656e-01    8.578       null       0.8  1.056e+00  1.065e+00     1     0   0.000   0.000   0.000   0.000    0000  132.2426623    2.2483299    0.0863     0.0900      -0.0104      -413       221        21       238   1.220e+00   9.630e-01   9.655e-01   1.056e+00  1.063e+00   1N000      0000  null        0     00nn     AAUU        3      0000      23      23      21      23       0      10       0      10   23.572   23.431   10.981   10.944          0          null          0          null          0          null          0          null  1315101501351051314     0   1.7318e+02   5.3445e+00     14.148    2.943      0.000   9.1373e+01   4.9809e+00     36.729    3.886      0.390  -2.6182e+01   7.7457e+01   2311.281   29.428      4.540   1.6133e+01   2.1305e+01    729.159   11.325      1.258   14.721   0.034      0   0.261   14.459   0.081      0   0.319   12.094    null     32   0.825    8.033    null     32   0.576   15.438     0.036        0   15.286     0.092        0   13.284      null       32    9.043      null       32   14.982     0.034        0   14.778     0.081        0   12.919      null       32    8.609      null       32   14.778     0.038        0   14.538     0.086        0   12.632      null       32    8.321      null       32   14.672     0.042        1   14.417     0.096        1   13.074      null       32    8.035      null       32   14.601     0.046        1   14.361     0.108        1   12.031      null       32    7.739      null       32   14.540     0.051        1   14.340     0.125        1   11.800      null       32    7.482      null       32   14.470     0.055        1   14.328     0.144        1   11.633      null       32    7.304      null       32   14.381     0.058        1   14.288     0.159        1   11.513      null       32    7.146      null       32   14.904    0.147    0.031   0.815      22    7.84  55315.66174722  55507.78197800  55415.88411125   14.604    0.273    0.057   0.849      22    2.14  55315.66174722  55507.78197800  55415.88411125     null     null     null    null       2    0.75  55315.66174722  55316.65409300  55316.14468965    9.928    3.279    1.037   0.813       6    0.03  55315.66174722  55316.65409300  55316.14468965      -22      -38       25     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       16015576203273 
+             4      1.986902     28.702597     1.3719829000e+02     2.4084900000e+00     5.0000000000e+00   J090847.65+022432.3  137.1985553    2.4089741    0.0935    0.1003     0.0046  227.8364418   31.3829740  138.8969853  -13.3836911  3222.797   425.225  1376103001351007935          1376p030_ac51-007935         1376p030_ac51    7935   15.162      0.039      27.5  1.367e+00   14.839      0.068      16.0  8.656e-01   12.474       null      -0.4  8.517e-01    8.984       null      -0.1  8.555e-01  1.022e+00     1     0   0.000   0.000   0.000   0.000    0000  137.1985547    2.4089744    0.0960     0.1040       0.0093       -36       271      -245       300   1.365e+00   8.673e-01   8.516e-01   8.555e-01  1.022e+00   1N001      0000  null        0     00nn     AAUU        3      0000      22      22      19      22       0      12       0      12   23.214   23.481   11.958   11.848          0          null          0          null          0          null          0          null  1376103001351007935     0   1.3653e+02   4.9619e+00     14.156    2.857      0.028   7.3195e+01   4.5781e+00     37.864    3.787      0.000  -2.9561e+01   8.1170e+01   2398.065   31.252      5.750  -2.9978e+00   2.0197e+01    764.177   10.860      1.537   14.920   0.040      1   0.261   14.714   0.111      1   0.319   12.469    null     32   0.825    8.531    null     32   0.576   15.656     0.045        0   15.524     0.124        0   13.482      null       32    9.544      null       32   15.181     0.040        1   15.033     0.111        1   13.294      null       32    9.107      null       32   14.968     0.042        1   14.829     0.119        1   12.709      null       32    8.769      null       32   14.820     0.047        1   14.719     0.134        1   12.329      null       32    8.477      null       32   14.640     0.048        1   14.595     0.145        1   11.955      null       32   11.865      null       32   14.409     0.045        1   14.418     0.146        1   11.593      null       32    8.383      null       32   14.105     0.040        1   14.154     0.133        1   11.949     0.488        1    8.715      null       32   13.685     0.032        1   13.775     0.109        1   11.577     0.398        1    7.579      null       32   15.177    0.176    0.038   0.767      21    6.01  55320.16060176  55512.27879402  55407.55627804   14.849    0.303    0.065   0.851      21    1.39  55320.16060176  55512.27879402  55407.55627804   14.654    8.475    2.447   0.591       5    0.03  55320.16060176  55321.28512382  55320.72286279     null     null     null   0.624       5    0.55  55320.16060176  55321.28512382  55320.72286279      -34       49       57     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       15531188098970 
+             5      0.132887   -158.735743     1.3409700000e+02     2.4963600000e+00     5.0000000000e+00   J085623.27+022946.7  134.0969866    2.4963256    0.0587    0.0608    -0.0077  225.9490598   28.7480936  135.8197076  -14.2076296  3422.410   654.005  1346103001351010379          1346p030_ac51-010379         1346p030_ac51   10379   14.021      0.028      38.5  1.051e+00   13.851      0.039      27.8  8.075e-01   11.916       null       1.9  1.002e+00    8.963       null       0.0  9.580e-01  9.425e-01     1     0   0.000   0.000   0.000   0.000    0000  134.0969866    2.4963260    0.0611     0.0631       0.0064       -42       113        72       123   1.050e+00   8.079e-01   1.002e+00   9.580e-01  9.423e-01   1N000      0000  null        0     00nn     AAUU        3      0000      26      26      26      26       0      12       0      12   26.258   26.606   13.387   13.377          0          null          0          null          0          null          0          null  1346103001351010379     0   3.9031e+02   1.0147e+01     14.441    3.022      0.037   1.8173e+02   6.5280e+00     37.136    3.871      0.011   1.3038e+02   7.0474e+01   2360.452   28.882      5.271  -5.8988e-01   2.0599e+01    747.423   11.258      1.942   13.869   0.018      1   0.261   13.710   0.041      1   0.319   11.349    null     32   0.825    8.284    null     32   0.576   14.586     0.020        0   14.542     0.047        0   12.726      null       32   10.050      null       32   14.130     0.018        1   14.029     0.041        1   12.174      null       32    8.860      null       32   13.810     0.018        1   13.686     0.039        1   11.799      null       32    8.456      null       32   13.358     0.015        1   13.282     0.033        1   12.268     0.534        1    8.183      null       32   12.815     0.012        1   12.827     0.026        1   12.071     0.534        1    7.892      null       32   12.412     0.010        1   12.471     0.022        1   11.187      null       32    7.612      null       32   12.202     0.010        1   12.267     0.022        1   11.078      null       32    7.394      null       32   12.113     0.010        1   12.180     0.023        1   11.010      null       32    7.188      null       32   14.012    0.064    0.013   0.800      25    4.57  55317.24965326  55509.36911760  55405.99910561   13.854    0.123    0.024   0.768      25    0.75  55317.24965326  55509.36911760  55405.99910561   12.702    1.966    0.568   0.693       9    0.28  55317.24965326  55318.37430311  55317.80092099     null     null     null   0.678       5    0.13  55317.24965326  55318.37430311  55317.80092099        1        1       35     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   804255154    0.257     -81.6        1     15.998         0.103     15.601         0.141     14.796         0.134       16287259535765 
+             6      0.270393     17.329017     1.2915721000e+02     2.8699100000e+00     5.0000000000e+00   J083637.73+025211.9  129.1572324    2.8699817    0.0861    0.0907    -0.0121  222.8899454   24.6222763  130.8066161  -15.1957667   517.688  1632.365  1285103001351022132          1285p030_ac51-022132         1285p030_ac51   22132   15.071      0.035      30.7  9.953e-01   14.859      0.071      15.4  8.180e-01   11.730      0.293       3.7  8.627e-01    8.254       null       1.7  8.741e-01  8.912e-01     1     0   0.000   0.000   0.000   0.000    0000  129.1572362    2.8699819    0.1017     0.1076      -0.0215       166       256         4       275   9.932e-01   8.192e-01   8.628e-01   8.740e-01  8.909e-01   1N000      0000  null        0     00nn     AABU        7      1111      24      24      17      24       0      11       0      11   24.348   24.599   10.938   10.891          0          null          0          null          0          null          0          null  1285103001351022132     0   1.4841e+02   4.8409e+00     13.899    2.926      0.127   7.1870e+01   4.6771e+00     38.288    3.875      0.148   3.2225e+02   8.6913e+01   2354.349   31.146      9.243   3.6588e+01   2.1274e+01    735.625   11.407      2.231   14.986   0.190      1   0.261   14.831   0.128      1   0.319   11.700   0.332      1   0.825    8.283    null     32   0.576   15.663     0.132        1   15.581     0.135        1   13.107     0.406        0    9.178      null       32   15.247     0.190        1   15.150     0.128        1   12.525     0.332        1    8.859      null       32   15.090     0.206        1   15.045     0.148        1   12.254     0.332        1    8.592      null       32   15.042     0.203        1   15.117     0.196        1   12.135     0.368        1    8.268      null       32   15.043     0.208        1   15.297     0.278        1   12.093     0.427        1    7.995      null       32   15.055     0.216        1   15.540     0.410        1   12.101     0.505        1    7.822      null       32   15.057     0.223        1   15.043      null       32   11.299      null       32    7.670      null       32   15.092     0.239        1   15.266      null       32   11.172      null       32    7.508      null       32   15.077    0.154    0.031   0.858      23    5.39  55312.48631574  55504.87217964  55408.72342710   14.865    0.321    0.066   0.748      23    1.66  55312.48631574  55504.87217964  55408.72342710   11.610    0.492    0.148   0.881       9    0.13  55312.48631574  55313.61096561  55313.04563086    9.101    1.512    0.456   0.624       7    0.04  55312.48631574  55313.61096561  55313.04563086      -30      -17       46     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       16025978715201 
+             7      1.384427   -131.257927     1.3267583000e+02     3.4792000000e-01     5.0000000000e+00   J085042.12+002051.5  132.6755409    0.3476664    0.1734    0.1258     0.0792  227.2423525   26.4410687  135.0378784  -16.6709475  3184.799  2958.248  1331100001351041827          1331p000_ac51-041827         1331p000_ac51   41827   14.738      0.079      13.7  1.866e+00   14.432      0.096      11.3  9.984e-01   12.126       null       0.5  1.041e+00    8.169       null       0.5  8.973e-01  1.286e+00     2     1   0.000   0.000   0.000   0.000    0000         null         null      null       null         null      null      null      null      null        null        null        null        null       null    null      0000  null        0     nnnn     AAUU        3      0000      22      22      20      22       0      10       0      10   22.105   22.625   10.709   10.651          0          null          0          null          0          null          0          null  1331100001351041827     0   2.0179e+02   1.4693e+01     13.748    2.931      0.245   1.0647e+02   9.3841e+00     36.074    3.831      0.345   4.3476e+01   9.0087e+01   2235.055   28.962      5.841   1.6935e+01   3.4320e+01    697.237   11.017      1.151   13.342   0.022      1   0.261   13.069   0.030      1   0.319   11.277    null     32   0.825    8.226    null     32   0.576   14.211     0.027        1   14.012     0.037        1   12.576      null       32    9.243      null       32   13.603     0.022        1   13.388     0.030        1   12.102      null       32    8.802      null       32   13.310     0.022        1   13.069     0.028        1   11.872      null       32    8.456      null       32   13.158     0.023        1   12.894     0.030        1   11.774      null       32    8.161      null       32   13.058     0.025        1   12.785     0.032        1   11.691      null       32    7.899      null       32   12.981     0.028        1   12.707     0.036        1   11.607      null       32    7.663      null       32   12.921     0.030        1   12.648     0.039        1   11.575      null       32    7.447      null       32   12.868     0.033        1   12.590     0.043        1   11.546      null       32    7.247      null       32   14.765    0.134    0.029   0.836      21    1.16  55316.58762249  55508.70823389  55412.63296636   14.418    0.158    0.034   0.738      21    0.07  55316.58762249  55508.70823389  55412.63296636   13.964    7.533    2.382   0.575       5    0.31  55316.58762249  55317.57996822  55317.06395610    9.853    5.821    1.841   0.870       4    0.20  55316.58762249  55317.57996822  55317.06395610      -13      -56       14     0     1     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       16012419252893 
+             7      3.559615     78.170515     1.3267583000e+02     3.4792000000e-01     5.0000000000e+00   J085042.43+002053.2  132.6767978    0.3481227    0.0726    0.0572     0.0303  227.2426237   26.4423836  135.0390033  -16.6701558  3181.508  2959.443  1331100001351041826          1331p000_ac51-041826         1331p000_ac51   41826   13.547      0.034      31.6  1.866e+00   13.276      0.041      26.7  9.984e-01   12.149      0.445       2.4  1.041e+00    8.412       null      -0.2  8.973e-01  1.286e+00     2     1   0.000   0.000   0.000   0.000    0000  132.6765889    0.3480313    0.0467     0.0446       0.0045       185        81       241        84   2.603e+00   1.097e+00   1.042e+00   8.975e-01  1.573e+00   1N082      0000  null        0     nnnn     AACU        7      0000      22      22      22      22       0      10       0      10   21.882   22.522   10.497   10.532          0          null          0          null          0          null          0          null  1331100001351041826     0   6.0404e+02   1.9144e+01     13.748    2.931      0.057   3.0886e+02   1.1587e+01     36.074    3.831      0.469   2.1894e+02   8.9687e+01   2235.055   28.962      2.934  -6.2822e+00   3.4201e+01    697.237   11.017      2.816   13.228   0.020      1   0.261   12.950   0.034      1   0.319   11.295    null     32   0.825    8.123    null     32   0.576   13.960     0.022        1   13.788     0.039        1   12.528      null       32    9.140      null       32   13.489     0.020        1   13.269     0.034        1   12.120      null       32    8.699      null       32   13.279     0.021        1   13.025     0.034        1   11.865      null       32    8.352      null       32   13.164     0.023        1   12.886     0.037        1   11.715      null       32    8.060      null       32   13.081     0.025        1   12.789     0.041        1   11.642      null       32    7.797      null       32   13.005     0.028        1   12.714     0.045        1   11.575      null       32    7.561      null       32   12.940     0.030        1   12.652     0.049        1   11.537      null       32    7.346      null       32   12.891     0.034        1   12.601     0.054        1   11.516      null       32    7.147      null       32   13.547    0.048    0.010   0.751      21    2.80  55316.58762249  55508.70823389  55412.63296636   13.273    0.091    0.019   0.833      21    0.99  55316.58762249  55508.70823389  55412.63296636   11.861    0.684    0.216   0.712       7    0.06  55316.58762249  55317.57996822  55317.06395610     null     null     null   0.621       4    0.47  55316.58762249  55317.57996822  55317.06395610       16       23      -29     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   803040521    0.543    -127.4        1     15.437         0.090     14.660         0.100     14.143         0.084       16012419253132 
+             8      0.749512     11.104175     1.3266296000e+02     6.3611000000e-01     5.0000000000e+00   J085039.12+003810.7  132.6630001    0.6363143    0.0988    0.1057     0.0126  226.9569192   26.5760979  134.9406475  -16.3974759  3217.581  3713.952  1331100001351060773          1331p000_ac51-060773         1331p000_ac51   60773   15.288      0.041      26.7  1.047e+00   14.958      0.072      15.1  9.275e-01   12.607       null      -0.6  1.048e+00    8.968       null       0.4  1.030e+00  1.002e+00     1     0   0.000   0.000   0.000   0.000    0000  132.6629999    0.6363211    0.1028     0.1099       0.0153        21       283       523       314   1.044e+00   9.260e-01   1.048e+00   1.030e+00  1.001e+00   2N000      0000  null        0     00nn     AAUU        3      0000      25      25      19      25       0      13       0      13   25.364   25.392   13.965   14.077          0          null          0          null          0          null          0          null  1331100001351060773     0   1.2153e+02   4.5496e+00     13.625    2.950      0.106   6.5606e+01   4.3545e+00     35.726    3.749      0.221  -4.0865e+01   7.1776e+01   2242.478   29.438      3.176   6.9669e+00   1.7015e+01    700.831   10.708      2.767   15.128   0.042      1   0.261   14.851   0.118      1   0.319   12.388    null     32   0.825    8.457    null     32   0.576   15.825     0.046        1   15.649     0.131        1   14.883      null       32    9.488      null       32   15.389     0.042        1   15.170     0.118        1   13.213      null       32    9.033      null       32   15.165     0.044        1   14.947     0.124        1   12.933      null       32    8.687      null       32   15.000     0.046        1   14.797     0.134        1   12.709      null       32    8.315      null       32   14.864     0.049        1   14.671     0.143        1   12.520      null       32    7.943      null       32   14.736     0.051        1   14.551     0.151        1   12.353      null       32    7.655      null       32   14.597     0.052        1   14.416     0.156        1   12.201      null       32    7.438      null       32   14.397     0.050        1   14.216     0.149        1   11.984      null       32    7.267      null       32   15.305    0.166    0.033   0.736      24    7.27  55316.45531822  55508.57592977  55401.03345005   14.964    0.213    0.043   0.776      24    0.02  55316.45531822  55508.57592977  55401.03345005     null     null     null   0.640       4    0.02  55316.45531822  55317.44766396  55316.89809236   10.974    9.072    2.516   0.801       7    0.00  55316.45531822  55317.44766396  55316.89809236        0       -4       85     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       16012403990002 
+             9      0.263713    137.722534     1.3141271000e+02    -1.6621700000e+00     5.0000000000e+00   J084539.06-013944.0  131.4127593   -1.6622242    0.1314    0.1451     0.0054  228.4429788   24.3297768  134.3552997  -18.9538540  2530.520  1661.064  1315001601351034098          1315m016_ac51-034098         1315m016_ac51   34098   15.826      0.050      21.9  1.096e+00   15.920      0.157       6.9  9.538e-01   12.199       null       1.0  1.161e+00    8.864       null      -0.4  8.948e-01  1.023e+00     1     0   0.000   0.000   0.000   0.000    0000  131.4127547   -1.6622205    0.1585     0.1738       0.0124      -257       470       208       524   1.095e+00   9.536e-01   1.161e+00   8.948e-01  1.023e+00   1N000      0000  null        0     1nnn     ABUU        3      0000      22      24       2      24       0      11       0      11   23.559   23.325   10.955   10.958          0          null          0          null          0          null          0          null  1315001601351034098     0   7.4089e+01   3.3875e+00     12.474    2.757      0.079   2.7028e+01   3.9005e+00     34.609    3.650      0.199   6.8948e+01   7.0053e+01   2115.952   28.610      2.234  -8.3976e+00   2.2568e+01    654.778   11.731      1.853   16.003   0.150      1   0.261   16.254   0.495      1   0.319   11.835    null     32   0.825    8.507    null     32   0.576   16.584     0.144        0   16.794     0.431        0   13.028      null       32    9.513      null       32   16.264     0.150        1   16.573     0.495        1   12.660      null       32    9.083      null       32   16.133     0.173        1   15.820      null       32   12.383      null       32    8.750      null       32   15.962     0.183        1   15.803      null       32   12.201      null       32    8.460      null       32   15.684     0.170        1   15.637      null       32   13.160      null       32    8.207      null       32   15.347     0.146        1   15.319      null       32   11.959      null       32    7.979      null       32   15.036     0.127        1   14.985      null       32   11.796      null       32    7.769      null       32   14.778     0.116        1   15.422     0.520        1   11.644      null       32    7.575      null       32   15.831    0.326    0.067   0.716      23   10.90  55315.92571907  55508.04735022  55419.96130182   15.904    0.716    0.146   0.597      21    0.23  55315.92571907  55508.04735022  55419.96130182   13.364    3.732    1.125   0.643       5    0.31  55315.92571907  55316.91793755  55316.40679083     null     null     null   0.761       6    0.00  55315.92571907  55316.91793755  55316.40679083       27       64      -23     1     1     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       10037195817377 
+            10      0.188163    117.457367     1.3855021000e+02    -1.6866300000e+00     5.0000000000e+00   J091412.06-014111.9  138.5502564   -1.6866541    0.0728    0.0777     0.0093  232.7213915   30.3700699  141.5272745  -16.8701846  3644.187  1596.899  1391001601351013418          1391m016_ac51-013418         1391m016_ac51   13418   14.784      0.032      34.2  1.055e+00   14.441      0.052      20.9  8.521e-01   12.163       null       0.8  9.217e-01    8.855       null       0.3  1.169e+00  9.815e-01     1     0   0.000   0.000   0.000   0.000    0000  138.5502564   -1.6866550    0.0755     0.0803      -0.0059       372       191       206       213   1.052e+00   8.490e-01   9.216e-01   1.169e+00  9.793e-01   1N000      0000  null        0     00nn     AAUU        3      0000      24      24      24      24       0      12       0      12   23.243   23.340   11.873   11.915          0          null          0          null          0          null          0          null  1391001601351013418     0   1.9341e+02   5.6529e+00     13.363    2.865      0.189   1.0555e+02   5.0577e+00     36.266    3.673      0.300   6.2895e+01   7.6592e+01   2207.672   29.394      6.290   5.6236e+00   1.9929e+01    695.569   11.296      1.500   14.660   0.044      1   0.261   14.369   0.059      1   0.319   11.945    null     32   0.825    8.165    null     32   0.576   15.344     0.047        0   15.154     0.066        0   13.167      null       32    9.330      null       32   14.921     0.044        1   14.688     0.059        1   12.770      null       32    8.741      null       32   14.755     0.048        1   14.529     0.066        1   12.458      null       32    8.237      null       32   14.684     0.055        1   14.511     0.081        1   12.179      null       32    7.849      null       32   14.642     0.064        1   14.551     0.101        1   11.951      null       32    7.562      null       32   14.606     0.073        1   14.616     0.127        1   11.759      null       32    7.323      null       32   14.574     0.082        1   14.668     0.155        1   11.618      null       32    7.074      null       32   14.532     0.091        1   14.663     0.176        1   11.528      null       32    6.839      null       32   14.770    0.085    0.017   0.751      23    3.00  55322.67374477  55514.66026867  55418.67813295   14.456    0.214    0.044   0.759      23    1.15  55322.67374477  55514.66026867  55418.67813295   13.532    3.897    1.125   0.560       5    0.14  55322.67374477  55323.79839392  55323.23606936   11.021   12.104    3.494   0.802       6    0.06  55322.67374477  55323.79839392  55323.23606936      -23      -51       18     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   179326676    0.421     -27.1        1     16.588         0.152     15.924         0.198     15.139         0.191       10518301289975 
+            11      0.319529   -164.915880     1.7862517000e+02    -7.2424000000e-01     5.0000000000e+00   J115430.03-004327.5  178.6251469   -0.7243257    0.0926    0.0977     0.0186  274.4513729   58.9625614  179.0266670   -1.2114174  1689.134   151.634  1784100001351005161          1784p000_ac51-005161         1784p000_ac51    5161   15.037      0.037      29.2  9.090e-01   14.890      0.078      14.0  8.682e-01   12.260       null       0.6  9.534e-01    9.021       null      -0.6  1.003e+00  9.150e-01     1     0   0.000   0.000   0.000   0.000    0000  178.6251422   -0.7243141    0.0988     0.1048       0.0212       170       264      -461       286   9.025e-01   8.676e-01   9.533e-01   1.003e+00  9.126e-01   1N000      0000  null        0     00nn     AAUU        3      1100      22      22      16      22       0      11       0      11   22.326   22.273   11.913   11.722          0          null          0          null          0          null          0          null  1784100001351005161     0   1.5320e+02   5.2506e+00     17.207    3.097      0.048   6.9803e+01   4.9961e+00     43.648    4.099      0.113   4.2940e+01   7.7395e+01   3028.741   31.209      0.455  -1.1741e+01   1.9524e+01   1033.924   10.874      2.360   14.958   0.045      1   0.261   14.854   0.101      1   0.319   11.952    null     32   0.825    8.357    null     32   0.576   15.636     0.048        1   15.630     0.112        1   13.157      null       32   10.007      null       32   15.219     0.045        1   15.173     0.101        1   12.777      null       32    8.933      null       32   15.050     0.050        1   15.016     0.113        1   12.549      null       32    8.661      null       32   14.980     0.057        1   14.970     0.133        1   12.427      null       32    8.395      null       32   14.953     0.066        1   14.957     0.158        1   12.227      null       32    8.259      null       32   14.943     0.077        1   14.966     0.187        1   12.048      null       32    8.018      null       32   14.912     0.087        1   14.980     0.222        1   11.881      null       32    7.823      null       32   14.826     0.092        1   14.959     0.251        1   11.730      null       32    7.584      null       32   15.036    0.140    0.030   0.886      21    3.15  55361.04390549  55551.03059838  55456.02231179   14.887    0.319    0.068   0.677      21    1.01  55361.04390549  55551.03059838  55456.02231179   14.031    7.241    2.183   0.861       3    0.46  55361.04390549  55362.03624769  55361.49498167     null     null     null   0.965       3    0.73  55361.04390549  55362.03624769  55361.49498167       -3       38      -76     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   890766297    0.524    -120.2        1     16.950         0.206     15.679         0.152     15.338         0.217       10446384107637 
+            12      0.176181     87.071835     1.8163046000e+02     1.8237800000e+00     5.0000000000e+00   J120631.32+014925.6  181.6305089    1.8237825    0.0742    0.0784    -0.0059  278.0009103   62.5012124  180.7703221    2.3218037  1741.250  2857.909  1815101501351045124          1815p015_ac51-045124         1815p015_ac51   45124   14.637      0.032      33.6  1.181e+00   14.376      0.052      21.0  9.999e-01   12.212       null       0.6  9.111e-01    9.005       null      -1.2  9.486e-01  1.034e+00     1     0   0.000   0.000   0.000   0.000    0000  181.6304981    1.8237776    0.0807     0.0864      -0.0139       410       189       141       207   1.174e+00   1.000e+00   9.111e-01   9.488e-01  1.032e+00   2N001      0000  null        0     11nn     AAUU        3      1111      23      23      23      23       0      11       0      11   25.180   25.373   11.951   11.768          0          null          0          null          0          null          0          null  1815101501351045124     0   2.2150e+02   6.5872e+00     17.452    3.079      0.000   1.1214e+02   5.3319e+00     44.459    3.970      0.000   4.8991e+01   7.8850e+01   2994.397   30.024      0.000  -2.2823e+01   1.9808e+01   1033.458   10.801      4.363   14.429   0.032      1   0.261   14.446   0.085      1   0.319   11.764    null     32   0.825    8.465    null     32   0.576   15.158     0.035        1   15.185     0.090        1   12.969      null       32    9.477      null       32   14.690     0.032        1   14.765     0.085        1   12.589      null       32    9.041      null       32   14.439     0.033        1   14.583     0.095        1   12.317      null       32    8.693      null       32   14.229     0.033        1   14.437     0.104        1   12.061      null       32    8.397      null       32   13.999     0.032        1   14.261     0.106        1   11.829      null       32    8.135      null       32   13.772     0.030        1   14.066     0.104        1   11.631      null       32    7.898      null       32   13.598     0.030        1   13.906     0.104        1   11.505      null       32    7.682      null       32   13.476     0.030        1   13.804     0.109       17   12.053      null       32    7.482      null       32   14.637    0.125    0.026   0.821      22    7.13  55362.76449216  55552.61710536  55461.80371671   14.405    0.220    0.046   0.633      22    3.60  55362.76449216  55552.61710536  55461.80371671   13.783    6.434    1.940   0.769       5    0.01  55362.76449216  55363.75670699  55363.24556217     null     null     null   0.820       3    0.02  55362.76449216  55363.75670699  55363.24556217       45      -23      -99     2     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   854827645    0.587    -129.4        1     16.912         0.189     16.021         0.191     15.390         0.189       14847479579404 
+            13      0.601345     70.848640     1.7588608000e+02    -4.3995000000e-01     5.0000000000e+00   J114332.69-002623.6  175.8862378   -0.4398952    0.0936    0.0969     0.0138  269.5454745   57.9618846  176.3993810   -2.0389292   939.531   896.286  1754100001351018470          1754p000_ac51-018470         1754p000_ac51   18470   15.073      0.038      28.9  9.063e-01   14.941      0.076      14.4  9.962e-01   12.255       null       0.2  9.143e-01    8.309      0.363       3.0  1.003e+00  9.524e-01     2     1   0.000   0.000   0.000   0.000    0000         null         null      null       null         null      null      null      null      null        null        null        null        null       null    null      0000     s        0     nnnn     AAUC       11      0000      23      23      16      23       0      11       2      11   25.393   25.400   12.948   12.929          0          null          0          null          0          null          0          null  1754100001351018470     0   1.4814e+02   5.1284e+00     16.672    2.953      0.084   6.6640e+01   4.6435e+00     43.530    3.932      0.143   1.4249e+01   9.2214e+01   2996.411   33.759      2.139   7.5251e+01   2.5163e+01   1016.842   12.344      2.047   14.649   0.030      1   0.261   14.545   0.083      1   0.319   11.848    null     32   0.825    8.106    null     32   0.576   15.478     0.037        1   15.456     0.102        1   13.133      null       32    8.980      null       32   14.910     0.030        1   14.864     0.083        1   12.673      null       32    8.682      null       32   14.551     0.028        1   14.526     0.080        1   12.427      null       32    8.559      null       32   14.348     0.029        1   14.353     0.084        1   12.315      null       32    8.266      null       32   14.266     0.032        1   14.310     0.097        1   12.175      null       32    8.005      null       32   14.236     0.036        1   14.339     0.118        1   12.026      null       32    7.769      null       32   14.224     0.041        1   14.394     0.145        1   12.672      null       32    7.552      null       32   14.224     0.047        1   14.446     0.175        1   11.840      null       32    7.353      null       32   15.077    0.152    0.032   0.769      22    4.26  55358.53013315  55548.65001025  55457.75192854   14.954    0.297    0.062   0.850      22    0.47  55358.53013315  55548.65001025  55457.75192854   15.091   14.559    4.390   0.817       4    0.11  55358.53013315  55359.52234799  55359.04732075    8.337    1.405    0.423   0.709       7    1.09  55358.53013315  55359.52234799  55359.04732075       23      -51      -57     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       10447369030109 
+            14      0.265432    103.810114     1.8274083000e+02    -1.3542000000e-01     5.0000000000e+00   J121057.81-000807.5  182.7409016   -0.1354376    0.1002    0.1084     0.0160  281.6484709   61.0526806  182.5688612    0.9656335  2794.178  1693.400  1830100001351032314          1830p000_ac51-032314         1830p000_ac51   32314   15.274      0.040      26.9  1.018e+00   14.882      0.079      13.7  9.942e-01   12.365      0.443       2.4  9.763e-01    8.412       null       1.2  9.347e-01  9.838e-01     1     0   0.000   0.000   0.000   0.000    0000  182.7409028   -0.1354359    0.1151     0.1244       0.0181       -21       319      -164       348   1.017e+00   9.939e-01   9.763e-01   9.347e-01  9.837e-01   1N000      0000  null        0     11nn     AACU        7      3455      24      24      11      18       0      13       0      13   24.526   17.516   12.842   13.849          0          null          0          null          0          null          0          null  1830100001351032314     0   1.2311e+02   4.5737e+00     18.641    3.172      0.000   7.0351e+01   5.1476e+00     52.147    4.114      0.461   1.7949e+02   7.3316e+01   3128.237   30.851      1.345   2.5661e+01   2.1375e+01   1065.049   12.026      2.119   14.986   0.042      1   0.261   14.657   0.099      1   0.319   11.559    null     32   0.825    7.958    null     32   0.576   15.792     0.049        1   15.541     0.116        1   12.902      null       32    9.111      null       32   15.247     0.042        1   14.976     0.099        1   12.384      null       32    8.534      null       32   14.807     0.036        1   14.598     0.098        1   12.695     0.501        1    8.102      null       32   14.400     0.031        1   14.295     0.093        1   12.353     0.450        1    8.453     0.508        1   14.115     0.029        1   14.106     0.091        1   12.126     0.439        1    8.085     0.456        1   13.964     0.029        1   14.034     0.098        1   11.973     0.449        1    7.792     0.429        1   13.893     0.032        1   14.036     0.112        1   11.880     0.479        1    7.615     0.441       17   13.855     0.035        1   14.079     0.132        1   11.860     0.539        1    7.584     0.511       17   15.300    0.158    0.032   0.726      23    4.44  55364.35175578  55554.20450050  55451.42556096   14.895    0.354    0.084   0.796      17    1.57  55364.35175578  55554.20450050  55480.20394174   12.369    1.252    0.347   0.862       7    0.08  55364.35175578  55365.34396899  55364.86568916    9.481    1.830    0.508   0.548       8    0.02  55364.35175578  55365.34396899  55364.86568916       35       82      -63     1     1     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       10998609262064 
+            15      3.100614    133.861759     1.7908296000e+02    -2.0491000000e-01     5.0000000000e+00   J115620.05-001219.8  179.0835810   -0.2055068    0.0432    0.0417    -0.0090  274.8368187   59.6263269  179.2409314   -0.5530696   488.879  1509.947  1784100001351022494          1784p000_ac51-022494         1784p000_ac51   22494   12.185      0.024      45.1  2.405e+01   12.072      0.023      46.4  6.214e+00   11.369      0.182       6.0  9.075e-01    8.973       null      -0.2  9.194e-01  1.021e+01     1     0   0.000   0.002   0.000   0.000    0900  179.0835816   -0.2055146    0.0429     0.0418      -0.0073        28        53       219        54   2.401e+01   6.225e+00   9.075e-01   9.194e-01  1.020e+01   1N001      0000  null        5     00nn     AABU        7      1100      25      25      25      25       0      13       0      13   25.649   25.494   13.911   13.913          0          null          0          null          0          null          0          null  1784100001351022494     0   2.1174e+03   4.6997e+01     18.104    3.257      0.178   9.3596e+02   2.0184e+01     44.126    4.193      0.087   4.4928e+02   7.5502e+01   3042.847   30.524      7.076  -4.4038e+00   2.0414e+01   1045.877   12.145      2.430   11.981   0.007      0   0.261   11.827   0.012     16   0.319   10.964   0.160      0   0.825    8.581    null     32   0.576   12.821     0.008        0   12.759     0.015       16   12.479     0.217        0    9.574      null       32   12.242     0.007        0   12.146     0.012       16   11.789     0.160        0    9.157      null       32   11.926     0.007        0   11.813     0.011       16   11.386     0.141        0    8.829      null       32   11.733     0.007        0   11.615     0.012       16   11.147     0.139        0    8.557      null       32   11.606     0.007        1   11.487     0.012       17   11.023     0.148        0    8.316      null       32   11.514     0.007        1   11.397     0.013       17   10.988     0.167        1    8.098      null       32   11.444     0.007        1   11.330     0.014       17   10.988     0.192        1    7.900      null       32   11.387     0.008        1   11.276     0.015       17   10.965     0.213        1    7.716      null       32   12.185    0.052    0.010   0.835      24   12.84  55361.30864041  55551.29507990  55452.55244396   12.065    0.036    0.007   0.858      24    1.86  55361.30864041  55551.29507990  55452.55244396   11.373    0.463    0.128   0.817      12    0.21  55361.30864041  55362.30085529  55361.83786541     null     null     null   0.837       3    0.21  55361.30864041  55362.30085529  55361.83786541        0      -10       71     0     0     0      0.68     13.89    0.80    65.00   11.811   0.007       0     13.89    0.80    65.00   11.694   0.011      16     13.89    0.80    65.00   11.267   0.140       0     17.55    0.88    65.00     null    null    null   250463666    0.492    -120.4        1     14.621         0.105     13.947         0.129     13.408         0.108       10445493413669 
+            16      4.101424     97.246113     2.2250238000e+02     8.1555000000e-01     5.0000000000e+00   J145000.84+004855.4  222.5035103    0.8154063    0.0864    0.0900    -0.0052  355.1335229   51.2526261  219.7990894   16.3665788  1656.011   217.851  2223101501351005587          2223p015_ac51-005587         2223p015_ac51    5587   15.224      0.035      31.2  2.808e+00   15.077      0.076      14.2  1.093e+00   12.175       null       1.6  9.493e-01    8.879       null       1.0  1.054e+00  1.553e+00     1     0   0.000   0.000   0.000   0.000    0000  222.5035103    0.8154063    0.0968     0.0990      -0.0035         0       164         0       171   2.808e+00   1.093e+00   9.493e-01   1.054e+00  1.553e+00   1N000      0000  null        0     00nn     AAUU        3      0000      34      34      15      34       0      24       0      24   33.325   33.236   23.938   23.789          0          null          0          null          0          null          0          null  2223101501351005587     0   1.2900e+02   4.1401e+00     15.580    3.150      0.061   5.8766e+01   4.1407e+00     40.717    4.108      0.301   9.5219e+01   5.9312e+01   2595.183   31.676      6.968   1.4376e+01   1.5054e+01    818.207   11.069      1.908   14.375   0.017      1   0.261   14.396   0.065      1   0.319   12.470    null     32   0.825    8.361    null     32   0.576   15.364     0.024        1   15.431     0.090        1   13.511      null       32    9.420      null       32   14.636     0.017        1   14.715     0.065        1   13.295      null       32    8.937      null       32   14.100     0.014        1   14.227     0.054        1   13.128      null       32    8.556      null       32   13.666     0.012        1   13.837     0.047        1   12.897      null       32    8.247      null       32   13.379     0.011        1   13.561     0.044        1   12.690      null       32    8.005      null       32   13.225     0.011        1   13.403     0.045        1   12.510      null       32    7.761      null       32   13.141     0.012        1   13.316     0.048        1   12.348      null       32    7.535      null       32   13.079     0.013        1   13.267     0.053        1   12.198      null       32    7.373      null       32   15.227    0.148    0.025   0.806      33    3.10  55224.98695630  55592.55747810  55396.85066317   15.093    0.461    0.079   0.704      33    4.41  55224.98695630  55592.55747810  55396.85066317   13.075    2.130    0.435   0.747      15    0.00  55224.98695630  55406.09365199  55315.48526323   10.068    4.775    0.975   0.693      12    0.09  55224.98695630  55406.09365199  55315.48526323      -20      -13       13     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       14912829878160 
+            17      0.279951    -42.318424     2.2223792000e+02     2.3803400000e+00     5.0000000000e+00   J144857.08+022249.4  222.2378676    2.3803975    0.0685    0.0721    -0.0053  356.6330598   52.5424810  219.0314459   17.7741443  2351.581   350.184  2223103001351005473          2223p030_ac51-005473         2223p030_ac51    5473   14.751      0.030      36.6  9.262e-01   14.703      0.058      18.8  9.217e-01   12.463       null       0.7  9.093e-01    9.122       null       0.1  9.280e-01  9.198e-01     1     0   0.000   0.000   0.000   0.000    0000  222.2378667    2.3803989    0.0703     0.0738       0.0042       -88       102       140       112   9.224e-01   9.228e-01   9.093e-01   9.280e-01  9.189e-01   1N000      0000  null        0     00nn     AAUU        3      0000      36      36      29      36       0      23       0      23   38.314   38.194   25.685   26.158          0          null          0          null          0          null          0          null  2223103001351005473     0   1.9938e+02   5.4430e+00     14.132    2.876      0.042   8.2938e+01   4.4070e+00     39.626    3.914      0.280   4.0891e+01   6.1525e+01   2514.261   31.883      5.961   1.9114e+00   1.6834e+01    789.245   11.487      3.323   14.695   0.022      0   0.261   14.676   0.068      0   0.319   12.180    null     32   0.825    8.728    null     32   0.576   15.344     0.022        0   15.440     0.073        0   13.405      null       32    9.739      null       32   14.956     0.022        0   14.995     0.068        0   13.005      null       32    9.304      null       32   14.818     0.024        1   14.861     0.079        1   12.713      null       32    8.958      null       32   14.762     0.028        1   14.868     0.098        1   12.560      null       32    8.662      null       32   14.727     0.032        1   14.943     0.126        1   12.450      null       32    8.400      null       32   14.678     0.035        1   15.069     0.167        1   12.271      null       32    8.104      null       32   14.614     0.039        1   15.234     0.226        1   12.105      null       32    7.767      null       32   14.546     0.042        1   15.447     0.317        1   11.953      null       32    7.493      null       32   14.745    0.106    0.018   0.832      35    4.56  55224.32505282  55591.89595686  55407.00841343   14.687    0.280    0.047   0.868      35    2.57  55224.32505282  55591.89595686  55407.00841343   14.672    7.990    1.666   0.621       9    0.05  55224.32505282  55405.30008384  55318.71811895   12.243     null     null   0.511      11    0.07  55224.32505282  55405.30008384  55318.71811895       -3       33       26     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       14916093788377 
+            18      1.522633    -64.572950     2.1930533000e+02     1.4162300000e+00     5.0000000000e+00   J143713.18+012459.0  219.3049479    1.4164116    0.0644    0.0644    -0.0070  351.9956745   53.8899484  216.4411158   15.9365598  2109.792  1791.334  2193101501351032380          2193p015_ac51-032380         2193p015_ac51   32380   14.450      0.028      38.2  1.298e+00   14.244      0.044      24.6  9.560e-01   12.254       null       0.8  8.539e-01    8.913       null       0.8  1.047e+00  1.072e+00     1     0   0.000   0.000   0.000   0.000    0000  219.3049490    1.4164107    0.0662     0.0657      -0.0075       -61        80        56        84   1.299e+00   9.543e-01   8.539e-01   1.047e+00  1.072e+00   1N000      0000  null        0     00nn     AAUU        3      0200      41      41      37      37       0      19       0      20   43.459   40.228   22.970   22.586          0          null          0          null          0          null          0          null  2193101501351032380     0   2.6307e+02   6.8866e+00     16.676    3.055      0.000   1.2657e+02   5.1410e+00     54.448    4.354      0.348   5.8392e+01   7.0162e+01   2590.762   31.851      6.376   1.2616e+01   1.5264e+01    825.395   10.710      2.103   14.285   0.016      0   0.261   14.182   0.056      0   0.319   12.138    null     32   0.825    8.895    null     32   0.576   14.985     0.017        0   14.970     0.062        0   13.404      null       32    9.754      null       32   14.546     0.016        0   14.501     0.056        0   12.963      null       32    9.471      null       32   14.362     0.017        1   14.320     0.061        1   12.582      null       32    9.148      null       32   14.260     0.019        1   14.246     0.071        1   12.231      null       32   10.182      null       32   14.177     0.020        1   14.207     0.083        1   11.943      null       32    8.425      null       32   14.093     0.022        1   14.187     0.096        1   11.767      null       32    8.144      null       32   14.006     0.024        1   14.169     0.110        1   11.654      null       32    7.962      null       32   13.920     0.025        1   14.145     0.124        1   11.533      null       32    7.749      null       32   14.457    0.088    0.014   0.767      40    7.51  55222.20792934  55589.64793053  55449.16091438   14.243    0.154    0.025   0.748      36    0.13  55222.20792934  55589.64793053  55434.28233657   13.587    4.233    0.971   0.612      10    0.01  55222.20792934  55402.78618381  55326.64887200   10.250    5.171    1.156   0.692       9    0.06  55222.20792934  55402.78618381  55321.45329846       -1      -10       36     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null  1259188903    0.717     -64.6        1     16.248         0.115     15.841         0.151     15.114         0.160       14926179947702 
+            19      0.229502     72.754443     2.1934801000e+02     1.2876900000e+00     5.0000000000e+00   J143723.53+011715.7  219.3480709    1.2877089    0.0753    0.0798     0.0057  351.9032158   53.7656706  216.5263900   15.8284125  1996.919  1454.368  2193101501351019112          2193p015_ac51-019112         2193p015_ac51   19112   15.099      0.032      33.4  1.016e+00   14.858      0.060      18.2  8.440e-01   12.268       null       1.5  9.082e-01    9.090       null       0.4  1.050e+00  9.476e-01     1     0   0.000   0.000   0.000   0.000    0000  219.3480691    1.2877082    0.0789     0.0829       0.0055       152       123        66       134   1.014e+00   8.443e-01   9.082e-01   1.050e+00  9.469e-01   1N000      0000  null        0     00nn     AAUU        3      0200      45      46      28      42       0      23       0      23   44.542   40.818   22.927   22.810          0          null          0          null          0          null          0          null  2193101501351019112     0   1.4461e+02   4.3268e+00     16.451    3.016      0.130   7.1921e+01   3.9475e+00     53.968    4.229      0.468   8.3303e+01   5.6449e+01   2600.693   30.980      2.924   6.7249e+00   1.4961e+01    824.315   11.201      1.913   14.850   0.036      1   0.261   14.727   0.087      1   0.319   11.908    null     32   0.825    8.867    null     32   0.576   15.634     0.042        1   15.574     0.101        1   13.302      null       32    9.873      null       32   15.111     0.036        1   15.046     0.087        1   12.733      null       32    9.443      null       32   14.742     0.034        1   14.701     0.082        1   12.961     0.451        1    9.104      null       32   14.416     0.031        1   14.379     0.075        1   12.600     0.397        1   10.574      null       32   14.130     0.028        1   14.084     0.068        1   12.340     0.372        1    8.972      null       32   13.888     0.027        1   13.839     0.065        1   12.159     0.368        1    8.216      null       32   13.683     0.026        1   13.629     0.062        1   12.038     0.378        1    7.951      null       32   13.516     0.025        1   13.447     0.061        1   11.940     0.392        1    7.730      null       32   15.103    0.131    0.019   0.810      45    7.85  55222.20805667  55589.64793053  55448.21550807   14.851    0.329    0.051   0.767      41    1.43  55222.20805667  55589.64793053  55434.99452961   12.637    1.530    0.319   0.531      14    0.03  55222.20805667  55402.91848758  55324.23373331   10.866   10.764    2.244   0.677      11    0.11  55222.20805667  55402.91848758  55324.23373331        0       27      -37     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null  1259205903    1.153      25.9        1     17.323         0.295     16.252         0.227     15.333         0.190       14926216601457 
+            20      0.964989   -151.469046     2.1684646000e+02     1.8829100000e+00     5.0000000000e+00   J142723.11+015257.6  216.8463319    1.8826745    0.0709    0.0737    -0.0024  349.3156284   55.8600554  213.8688455   15.5779198   627.121  3012.266  2163101501351050632          2163p015_ac51-050632         2163p015_ac51   50632   14.859      0.031      35.3  9.331e-01   14.547      0.051      21.2  9.426e-01   12.094      0.267       4.1  1.014e+00    8.975       null       0.8  1.040e+00  9.725e-01     1     0   0.000   0.000   0.000   0.000    0000  216.8463325    1.8826713    0.0755     0.0787      -0.0014        19       116      -164       125   9.301e-01   9.437e-01   1.014e+00   1.040e+00  9.719e-01   1N000      0000  null        0     00nn     AABU        7      1111      37      37      31      34       0      25       0      25   36.972   34.046   25.888   25.717          0          null          0          null          0          null          0          null  2163101501351050632     0   1.8054e+02   5.1175e+00     15.956    3.060      0.047   9.5761e+01   4.5092e+00     45.769    3.898      0.200   2.3027e+02   5.6687e+01   2660.004   30.561      7.133   1.1687e+01   1.4523e+01    842.095   10.958      2.608   14.675   0.023      1   0.261   14.403   0.060      1   0.319   12.180   0.346      1   0.825   10.661    null     32   0.576   15.379     0.026        0   15.246     0.073        0   13.626     0.441        0    9.871      null       32   14.936     0.023        1   14.722     0.060        1   13.005     0.346        1   11.237      null       32   14.713     0.024        1   14.454     0.058        1   12.583     0.304        1    9.693      null       32   14.561     0.025        1   14.293     0.060        1   12.322     0.297        1    8.810      null       32   14.435     0.027       17   14.191     0.063        1   12.148     0.304        1    8.458      null       32   14.321     0.029       17   14.122     0.069        1   12.022     0.319        1    8.215      null       32   14.225     0.030       17   14.057     0.075        1   11.953     0.348        1    8.094      null       32   14.143     0.032       17   14.000     0.081        1   11.907     0.384        1    7.958      null       32   14.860    0.077    0.013   0.727      36    0.87  55220.09067855  55587.73022015  55406.24733220   14.494    0.218    0.037   0.771      32    2.15  55220.09067855  55584.88663310  55401.53343008   12.085    1.076    0.215   0.742      21    0.03  55220.09067855  55400.40484303  55320.61156773    9.915    3.337    0.667   0.661      15    0.00  55220.09067855  55400.40484303  55320.61156773       -6      -33      -28     0     1     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       14924077750865 
+            21      0.034693    157.448572     2.1488958000e+02     2.7096100000e+00     5.0000000000e+00   J141933.50+024234.5  214.8895837    2.7096011    0.0795    0.0845     0.0066  347.5165736   57.7406942  211.6681801   15.7026968  1789.815  1212.062  2147103001351018013          2147p030_ac51-018013         2147p030_ac51   18013   15.133      0.034      32.4  8.972e-01   14.835      0.063      17.2  9.309e-01   12.673       null       0.3  8.931e-01    9.459       null      -0.9  9.746e-01  9.214e-01     1     0   0.000   0.000   0.000   0.000    0000  214.8895840    2.7096015    0.0815     0.0869       0.0097        36       141        42       155   8.972e-01   9.307e-01   8.931e-01   9.746e-01  9.213e-01   1N000      0000  null        0     00nn     AAUU        3      0143      45      45      26      37       0      26       0      32   46.708   39.056   27.981   34.282          0          null          0          null          0          null          0          null  2147103001351018013     0   1.4019e+02   4.3288e+00     16.813    2.991      0.094   7.3473e+01   4.2684e+00     54.525    4.283      0.331   1.9522e+01   5.7833e+01   2658.279   31.600      6.890  -1.2208e+01   1.3043e+01    849.231   11.272      2.517   15.034   0.034      0   0.261   14.884   0.113      0   0.319   12.244    null     32   0.825    8.787    null     32   0.576   15.703     0.036        0   15.625     0.120        0   13.575      null       32    9.801      null       32   15.295     0.034        0   15.203     0.113        0   13.069      null       32    9.363      null       32   15.134     0.039        0   15.112     0.134        0   12.679      null       32    9.018      null       32   15.064     0.045        1   15.234     0.185        1   12.387      null       32    8.724      null       32   15.033     0.052        1   15.523     0.292        1   12.210      null       32    8.463      null       32   15.021     0.060        1   15.975     0.523        1   12.128      null       32    8.227      null       32   15.007     0.069        1   15.427      null       32   12.115      null       32    8.011      null       32   14.974     0.077        1   15.550      null       32   12.118      null       32    7.811      null       32   15.140    0.179    0.027   0.810      44   12.97  55218.37021328  55587.59791587  55402.75971497   14.854    0.382    0.063   0.739      36    3.55  55218.37021328  55582.90270540  55399.11421424   14.580   10.573    2.073   0.657      13    0.02  55218.37021328  55397.82510891  55321.10816979     null     null     null   0.695      13    0.00  55218.37021328  55398.15580470  55335.40577155      -20      -17      -17     1     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       14924259875113 
+            22      0.394257    -59.732609     2.1728529000e+02    -9.4940000000e-01     5.0000000000e+00   J142908.44-005657.6  217.2851954   -0.9493448    0.1048    0.1119     0.0168  346.8174409   53.3854990  215.2543519   13.0459412  3437.388  3527.338  2178001601351059792          2178m016_ac51-059792         2178m016_ac51   59792   15.383      0.041      26.6  9.304e-01   15.184      0.102      10.6  8.626e-01   12.775      0.504       2.2  9.627e-01    9.021       null       0.4  9.619e-01  9.246e-01     1     0   0.000   0.000   0.000   0.000    0000  217.2851909   -0.9493488    0.1198     0.1260       0.0173      -186       229      -164       240   9.299e-01   8.617e-01   9.627e-01   9.619e-01  9.242e-01   1N000      0000  null        0     0nnn     AACU        7      1200      31      31       8      26       0      22       0      22   32.180   27.365   22.994   23.507          0          null          0          null          0          null          0          null  2178001601351059792     0   1.1142e+02   4.1908e+00     17.456    3.065      0.070   5.3281e+01   5.0157e+00     52.674    4.368      0.479   1.2306e+02   5.7083e+01   2756.422   30.025      9.088   5.9761e+00   1.6532e+01    886.265   11.717      3.446   15.303   0.061      0   0.261   15.223   0.207      0   0.319   11.791    null     32   0.825    8.768    null     32   0.576   15.956     0.063        0   15.931     0.211        0   13.042      null       32   11.302      null       32   15.564     0.061        0   15.542     0.207        0   12.616      null       32    9.344      null       32   15.437     0.069        1   15.489     0.254        1   12.306      null       32    9.001      null       32   15.396     0.082        1   15.552     0.333        1   12.089      null       32    8.708      null       32   15.337     0.093        1   15.556     0.404        1   11.959      null       32    8.450      null       32   15.198     0.096        1   15.435     0.426        1   11.901      null       32    8.217      null       32   15.004     0.094        1   15.262     0.422        1   11.879      null       32    8.003      null       32   14.804     0.090        1   15.095     0.416        1   13.400      null       32    8.745      null       32   15.387    0.183    0.033   0.814      30    3.76  55221.28218131  55588.59038720  55408.86098771   15.191    0.388    0.076   0.707      25    0.44  55221.28218131  55586.07737162  55374.32817320   12.780    1.800    0.384   0.770      14    0.02  55221.28218131  55401.72724414  55335.88542430   11.228   12.800    2.729   0.637      11    0.06  55221.28218131  55401.72724414  55335.88542430       18       -7      -55     0     0     1      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null       11139837593715 
+            23      0.245057      5.986972     2.1201942000e+02    -7.8780000000e-02     5.0000000000e+00   J140804.66-000443.3  212.0194271   -0.0787123    0.0711    0.0756    -0.0029  340.1604808   57.1465614  209.8723522   12.1014624  1383.191  1841.917  2117100001351028343          2117p000_ac51-028343         2117p000_ac51   28343   14.782      0.031      34.5  1.412e+00   14.570      0.050      21.6  9.803e-01   12.039      0.252       4.3  9.863e-01    9.299       null      -0.6  9.892e-01  1.111e+00     1     0   0.000   0.000   0.000   0.000    0000  212.0194399   -0.0787156    0.0828     0.0857       0.0126       390       113      -113       124   1.401e+00   9.782e-01   9.858e-01   9.891e-01  1.107e+00   1N000      h000  null        0     00nn     AABU        7      1222      39      39      32      38       1      26       0      27   38.504   37.217   25.996   29.933          8             h          0          null          0          null          0          null  2117100001351028343     0   1.9374e+02   5.6134e+00     16.925    3.060      0.081   9.3750e+01   4.3318e+00     43.405    3.936      0.195   2.4241e+02   5.6218e+01   2788.752   31.649      3.310  -8.7245e+00   1.5113e+01    911.871   11.829      3.416   14.567   0.033      1   0.261   14.503   0.092      1   0.319   11.585   0.203      0   0.825    9.013    null     32   0.576   15.301     0.037        0   15.309     0.104        0   13.115     0.278        0   10.012      null       32   14.828     0.033        1   14.822     0.092        1   12.410     0.203        0    9.589      null       32   14.596     0.034        1   14.619     0.099        1   11.993     0.178        1    9.254      null       32   14.442     0.037        1   14.539     0.113        1   11.731     0.172        1    8.972      null       32   14.290     0.039        1   14.494     0.131        1   11.512     0.169        1    8.724      null       32   14.111     0.039        1   14.414     0.144        1   11.283     0.162        1    8.499      null       32   13.889     0.037        1   14.238     0.142        1   11.085     0.156        1    8.293      null       32   13.566     0.032        1   13.880     0.118        1   10.938     0.156        1    8.102      null       32   14.795    0.114    0.018   0.740      38    8.10  55216.91519411  55581.31620528  55397.04688435   14.575    0.308    0.050   0.730      37    6.08  55216.91519411  55581.31620528  55397.06297745   12.054    0.996    0.195   0.580      21    0.77  55216.91519411  55394.18631015  55312.27735478     null     null     null   0.702      12    0.00  55216.91519411  55396.43534653  55315.39431744        7       -4        8     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   317025224    0.460    -141.2        1     16.347         0.109     16.216         0.227     14.913         0.146       11158732170904 
+            24      0.175877     84.479395     3.0804120000e+01    -6.0456300000e+00     5.0000000000e+00   J020313.00-060244.2   30.8041689   -6.0456253    0.0837    0.0848    -0.0196  165.1522658  -62.8744275   26.4720039  -17.4095862   943.268  2079.386   303006101351029085          0303m061_ac51-029085         0303m061_ac51   29085   15.251      0.034      31.6  9.362e-01   15.036      0.068      15.9  8.961e-01   12.586       null       0.6  9.978e-01    9.188       null       0.1  9.921e-01  9.416e-01     1     0   0.000   0.000   0.000   0.000    0000   30.8041691   -6.0456290    0.1028     0.1008      -0.0125        20       158      -290       159   9.313e-01   8.964e-01   9.977e-01   9.921e-01  9.400e-01   1N000      0000  null        0     11nn     AAUU        3      0100      45      45      22      42       0      22       0      22   48.270   44.721   23.912   23.800          0          null          0          null          0          null          0          null   303006101351029085     0   1.2578e+02   3.9859e+00     15.145    2.954      0.076   6.1063e+01   3.8291e+00     48.722    4.109      0.203   3.5366e+01   5.5507e+01   2598.936   30.028      4.565   2.2535e+00   1.5607e+01    819.785   11.279      1.957   15.018   0.045      1   0.261   14.876   0.078      1   0.319   11.891    null     32   0.825    8.706    null     32   0.576   15.760     0.050        1   15.728     0.092        1   13.243      null       32    9.795      null       32   15.279     0.045        1   15.195     0.078        1   12.716      null       32    9.282      null       32   14.964     0.044        1   14.866     0.075        1   12.274      null       32    8.946      null       32   14.660     0.041        1   14.567     0.072        1   11.937      null       32    9.168      null       32   14.381     0.038        1   14.295     0.068        1   11.713      null       32    8.534      null       32   14.185     0.037        1   14.094     0.066        1   11.550      null       32    8.300      null       32   14.080     0.039        1   13.968     0.068        1   11.424      null       32    8.084      null       32   14.028     0.043       17   13.898     0.074        1   11.310      null       32    7.799      null       32   15.250    0.138    0.021   0.827      44    1.60  55209.13926690  55574.99984894  55445.06955131   15.019    0.457    0.070   0.726      41    5.26  55209.13926690  55574.99984894  55435.83132853   14.037    8.535    1.820   0.705      12    0.10  55209.13926690  55396.80016897  55311.41864603   11.881     null     null   0.742       9    0.07  55209.13926690  55396.80016897  55311.41864603       17       18       51     1     0     1      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null        8995144419819 
+            25      1.019743   -101.897988     3.0692580000e+01    -4.1357100000e+00     5.0000000000e+00   J020246.15-040808.7   30.6923021   -4.1357684    0.0778    0.0786    -0.0168  162.5669326  -61.3909264   27.0736776  -15.5855288  1231.752  3114.893   303004601351047723          0303m046_ac51-047723         0303m046_ac51   47723   15.020      0.033      33.0  1.473e+00   14.664      0.055      19.8  9.813e-01   12.603       null       0.4  9.946e-01    8.517       null       1.5  9.164e-01  1.139e+00     1     0   0.000   0.000   0.000   0.000    0000   30.6923006   -4.1357685    0.0818     0.0820      -0.0162      -368       116       -54       120   1.469e+00   9.767e-01   9.946e-01   9.165e-01  1.136e+00   1N000      0000  null        0     00nn     AAUU        3      0200      46      46      34      42       0      23       0      23   45.748   41.931   24.006   23.894          0          null          0          null          0          null          0          null   303004601351047723     0   1.5554e+02   4.7142e+00     16.946    3.122      0.124   8.5948e+01   4.3318e+00     54.438    4.354      0.077   2.1578e+01   6.1311e+01   2693.547   31.791      5.658   2.6583e+01   1.7758e+01    856.426   11.913      1.751   14.723   0.023      0   0.261   14.501   0.098      0   0.319   11.945    null     32   0.825    8.668    null     32   0.576   15.450     0.026        0   15.308     0.111        0   13.243      null       32    9.511      null       32   14.984     0.023        0   14.820     0.098        0   12.770      null       32    9.244      null       32   14.799     0.025        0   14.660     0.109        0   12.449      null       32    9.103      null       32   14.719     0.028        0   14.650     0.135        0   12.226      null       32    8.915      null       32   14.669     0.032        1   14.689     0.168        1   12.061      null       32    8.685      null       32   14.606     0.035        1   14.735     0.207        1   11.946      null       32    8.477      null       32   14.506     0.037        1   14.755     0.245        1   11.842      null       32    8.288      null       32   14.370     0.038        1   14.721     0.273        1   11.725      null       32    8.113      null       32   15.017    0.151    0.022   0.769      45    8.78  55209.53669041  55575.52919388  55432.61710516   14.662    0.257    0.040   0.821      41    0.60  55209.53669041  55575.52919388  55419.12766513   14.866   14.148    2.950   0.710      10    0.15  55209.53669041  55397.46130572  55307.48945634    9.455    2.619    0.546   0.645      14    0.11  55209.53669041  55397.46130572  55307.48945634        2       33       28     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null        null     null      null        0       null          null       null          null       null          null        8995380899411 
+            26      0.233341     95.755454     3.4960625000e+02    -3.3458560000e+01     5.0000000000e+00   J231825.51-332730.8  349.6063273  -33.4585665    0.0598    0.0576    -0.0220    9.7327611  -69.0012950  336.4649724  -26.4852849  1157.361  1677.650  3491033401351029867          3491m334_ac51-029867         3491m334_ac51   29867   13.848      0.028      39.4  1.502e+00   13.644      0.035      31.2  9.212e-01   12.373       null       0.6  1.054e+00    8.461       null       0.9  9.802e-01  1.147e+00     2     1   0.000   0.000   0.000   0.013    0001  349.6063970  -33.4586272    0.0551     0.0535      -0.0161      -144       105       -58       106   3.594e+00   1.182e+00   1.055e+00   9.818e-01  1.930e+00   1N030      0000  null        0     nnnn     AAUU        3      0011      25      25      25      25       0      13       0      13   25.370   25.085   12.838   12.154          0          null          0          null          0          null          0          null  3491033401351029867     0   4.5790e+02   1.1632e+01     11.850    2.925      0.128   2.1996e+02   7.0417e+00     33.162    3.669      0.228   4.1408e+01   6.8344e+01   2059.108   28.887      7.263   1.9739e+01   2.2844e+01    632.867   10.967      2.177   13.564   0.015      1   0.261   13.426   0.024      1   0.319   11.911    null     32   0.825    8.569    null     32   0.576   14.330     0.017        1   14.269     0.029        1   13.210      null       32    9.509      null       32   13.825     0.015        1   13.745     0.024        1   12.736      null       32    9.145      null       32   13.556     0.015        1   13.491     0.025        1   12.417      null       32    8.807      null       32   13.389     0.016        1   13.347     0.027       17   12.188      null       32    8.519      null       32   13.262     0.017        1   13.232     0.029       17   11.998      null       32    8.262      null       32   13.128     0.017        1   13.105     0.030       17   11.755      null       32    8.030      null       32   12.971     0.017        1   12.961     0.030       17   11.502      null       32    7.817      null       32   12.827     0.017       17   12.832     0.031       17   11.284      null       32    7.619      null       32   13.849    0.058    0.012   0.842      23    1.08  55342.89103764  55525.00228640  55430.68548546   13.643    0.076    0.015   0.789      24    0.04  55342.89103764  55525.00228640  55430.68548546   13.974    5.906    1.638   0.729       6    0.18  55342.89103764  55351.68891736  55344.08680458    9.732    3.331    0.924   0.728       6    0.07  55342.89103764  55351.68891736  55344.08680458       -5       38      -47     0     0     0      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null   658825932    0.282     -68.6        1     15.586         0.077     14.812         0.070     14.304         0.078       12839099876092 
+            27      0.617302    130.472474     3.4193799000e+02    -3.2923240000e+01     5.0000000000e+00   J224745.15-325524.0  341.9381454  -32.9233513    0.0612    0.0608    -0.0105   13.1223323  -62.7119378  330.3117995  -23.2750301  2180.883  3080.634  3419033401351045350          3419m334_ac51-045350         3419m334_ac51   45350   14.176      0.027      39.8  1.670e+00   14.175      0.045      24.0  8.834e-01   12.094       null       1.4  1.156e+00    8.391       null       1.3  9.329e-01  1.195e+00     1     0   0.000   0.000   0.000   0.000    0000  341.9381486  -32.9233528    0.0639     0.0625      -0.0079      -127       136        53       137   1.671e+00   8.819e-01   1.156e+00   9.331e-01  1.194e+00   2N001      0000  null        0     11nn     AAUU        3      0000      25      25      25      25       0      12       0      12   24.987   26.142   12.469   12.031          0          null          0          null          0          null          0          null  3419033401351045350     0   3.3843e+02   8.5036e+00     12.952    2.828      0.021   1.3484e+02   5.6210e+00     37.230    3.948      0.209   9.4053e+01   6.8170e+01   2183.344   28.630      9.716   2.7144e+01   2.1301e+01    674.612   11.374      2.671   13.990   0.019      1   0.261   14.009   0.056      1   0.319   11.579    null     32   0.825    8.155    null     32   0.576   14.727     0.021        1   14.861     0.065        1   13.033      null       32    9.137      null       32   14.251     0.019        1   14.328     0.056        1   12.404      null       32    8.731      null       32   13.997     0.019        1   14.052     0.057        1   12.480     0.379        1    8.423      null       32   13.821     0.020        1   13.876     0.060        1   12.016     0.307        1    8.076      null       32   13.679     0.021        1   13.739     0.064        1   11.685     0.271        1    7.748      null       32   13.552     0.021        1   13.610     0.066        1   11.441     0.254        1    7.471      null       32   13.427     0.022       17   13.481     0.069        1   11.250     0.248        1    7.218      null       32   13.297     0.022       17   13.347     0.070        1   11.086     0.245        1    6.986      null       32   14.175    0.075    0.015   0.760      24    3.06  55337.06915530  55519.44767340  55431.88224783   14.194    0.161    0.032   0.746      24    2.00  55337.06915530  55519.44767340  55431.88224783   12.687    1.154    0.333   0.661       8    0.02  55337.06915530  55338.19380252  55337.63147891    9.423    3.507    1.012   0.652       8    0.25  55337.06915530  55338.19380252  55337.63147891       54      -42       90     2     1     2      null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null      null    null     null     null    null    null    61743537    0.219     -51.0        1     16.888         0.148     16.024         0.158     15.413         0.186       12945313478613 
